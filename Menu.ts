@@ -38,7 +38,7 @@ export class Mainmenu {
         };
     };
 };
-
+/*
 class Classesmenu {
 
-};
+};*/

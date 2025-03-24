@@ -1,4 +1,4 @@
-class Launcher {
+/*class Launcher {
     UI = [
         "",
         "",
@@ -22,4 +22,4 @@ class Launcher {
         "",
         "",
     ];
-}
+}*/
