@@ -5,9 +5,10 @@ class Animatueur {
         "  刀   ",
     ];
 
-    Processeurs = 8;
+    Processeurs = 10;
     Défense = 5;
-    Batterie = 80;
+    Codage = 0;
+    Batterie = 50;
     RAM = 32;
 }
 
@@ -18,9 +19,10 @@ class Nainformaticien {
         "  技ロ ",
     ];
 
-    Processeurs = 8;
+    Processeurs = 4;
     Défense = 10;
-    Batterie = 80;
+    Codage = 6;
+    Batterie = 70;
     RAM = 16;
 
 }
@@ -34,7 +36,8 @@ class Cyberserker {
 
     Processeurs = 8;
     Défense = 8;
-    Batterie = 100;
+    Codage = 9;
+    Batterie = 70;
     RAM = 16;
 }
 
@@ -45,10 +48,11 @@ class Captchattaque {
         "  勇   ",
     ];
 
-    Processeurs = 10;
-    Défense = 7;
+    Processeurs = 4;
+    Défense = 5;
+    Codage = 8;
     Batterie = 80;
-    RAM = 8;
+    RAM = 32;
 }
 
 class Pèrecrea {
@@ -57,6 +61,12 @@ class Pèrecrea {
         "  息─┤ ",
         "  大 │ ",
     ];
+
+    Processeurs = 6;
+    Défense = 8;
+    Codage = 6;
+    Batterie = 100;
+    RAM = 18;
 }
 
 class Webscammer {
@@ -65,6 +75,11 @@ class Webscammer {
         "  播   ",
         "  扰   ",
     ];
+    Processeurs = 5;
+    Défense = 4;
+    Codage = 10;
+    Batterie = 80;
+    RAM = 32;
 }
 
 class Archicube {
@@ -73,4 +88,9 @@ class Archicube {
         " 𓆰城─┤ ",
         "  防 │ ",
     ];
+    Processeurs = 0;
+    Défense = 10;
+    Codage = 10;
+    Batterie = 80;
+    RAM = 32;
 }

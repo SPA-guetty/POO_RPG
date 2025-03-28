@@ -39,4 +39,4 @@ function Print() {
 }
 
 let mainMenu = new Mainmenu();
-mainMenu.affiche();
+mainMenu.begin();
