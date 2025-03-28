@@ -1,4 +1,25 @@
+export class classes {
+    animatueur = new Animatueur();
+    nainformaticien = new  Nainformaticien();
+    cyberserker = new Cyberserker();
+    captchattaque = new Captchattaque();
+    perecrea = new Pèrecrea()
+    webscammeur = new Webscammer();
+    archicube = new Archicube();
+
+    classlist = [
+        this.animatueur, 
+        this.nainformaticien, 
+        this.cyberserker, 
+        this.captchattaque, 
+        this.perecrea, 
+        this.webscammeur, 
+        this.archicube,
+    ];
+}
+
 class Animatueur {
+    classname = "animatueur";
     UI = [
         "  の   ",
         "  杀مــ",
@@ -13,6 +34,7 @@ class Animatueur {
 }
 
 class Nainformaticien {
+    classname = "nainformaticien";
     UI = [
         "       ",
         "  の   ",
@@ -28,6 +50,7 @@ class Nainformaticien {
 }
 
 class Cyberserker {
+    classname = "cyberserker";
     UI = [
         "  尊   ",
         " ⛨裁مــ",
@@ -42,6 +65,7 @@ class Cyberserker {
 }
 
 class Captchattaque {
+    classname = "captchattaque";
     UI = [
         "  樂   ",
         "Ɵ═攻═Ɵ ",
@@ -56,6 +80,7 @@ class Captchattaque {
 }
 
 class Pèrecrea {
+    classname = "pèrecrea";
     UI = [
         "  护 ☥ ",
         "  息─┤ ",
@@ -70,6 +95,7 @@ class Pèrecrea {
 }
 
 class Webscammer {
+    classname = "webscammeur";
     UI = [
         "  の   ",
         "  播   ",
@@ -83,6 +109,7 @@ class Webscammer {
 }
 
 class Archicube {
+    classname = "archicube";
     UI = [
         "  护 ⚘ ",
         " 𓆰城─┤ ",

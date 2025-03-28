@@ -29,6 +29,7 @@ export class Etage {
 
     Affiche() : void {
         console.clear();
+        console.clear();
         for (let i = 0; i < this.UI.length; i++) {
             console.log(this.UI[i]);
         }

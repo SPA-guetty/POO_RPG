@@ -1,5 +1,3 @@
-//import * as readline from 'readline';
-
 import { Etage } from "./Etage.ts";
 
 export class Mainmenu {
@@ -62,9 +60,44 @@ export class Mainmenu {
         }
         let etage = new Etage();
         etage.Affiche();
+        const classesmenu = new Classesmenu();
+        classesmenu.Affiche()
     }
 };
-/*
-class Classesmenu {
 
-};*/
+class Classesmenu {
+    UI = [
+        "#######################################################################################################################",
+        "#                                                                                                                     #",
+        "#         n°          1             2            3               4             5             6            7           #",
+        "#                                                                                                                     #",
+        "#                     の                         尊              樂            护 ☥          の           护 ⚘        #",
+        "#      Character      杀مــ         の          ⛨裁مــ         Ɵ═攻═Ɵ          息─┤          播          𓆰城─┤        #",
+        "#                     刀            技ロ         清              勇            大 │          扰           防 │         #",
+        "#                                                                                                                     #",
+        "# Attaque physique:                                                                                                   #",
+        "# Codage (magie):                                                                                                     #",
+        "# Défense:                                                                                                            #",
+        "# Batterie (pv):                                                                                                      #",
+        "# RAM (endurance):                                                                                                    #", // Moitié
+        "#                                                                                                                     #",
+        "# Attaque n°1:                                                                                                        #",
+        "# Dégâts:                                                                                                             #",
+        "# Cible(s):                                                                                                           #",
+        "#                                                                                                                     #",
+        "# Attaque n°2:                                                                                                        #",
+        "# Dégâts:                                                                                                             #",
+        "# Cible(s)                                                                                                            #",
+        "#                                                                                                                     #",
+        "# Passif:                                                                                                             #",
+        "#                                                                                                                     #",
+        "#######################################################################################################################",
+    ]
+
+    Affiche() : void {
+        console.clear();
+        for (let i = 0; i < this.UI.length; i++) {
+            console.log(this.UI[i]);
+        }
+    }
+};
