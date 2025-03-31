@@ -1,4 +1,5 @@
 import { Etage } from "./Etage.ts";
+import { game } from "./Game.ts";
 
 export class Mainmenu {
     UI = [
@@ -61,7 +62,7 @@ export class Mainmenu {
         let etage = new Etage();
         etage.Affiche();
         const classesmenu = new Classesmenu();
-        classesmenu.Affiche()
+        classesmenu.Load()
     }
 };
 
@@ -99,5 +100,39 @@ class Classesmenu {
         for (let i = 0; i < this.UI.length; i++) {
             console.log(this.UI[i]);
         }
+    }
+
+    StrNulltoStr(strnull: string | null): string {
+        if (strnull === null) {
+            return "";
+        } else {
+            return strnull;
+        }
+    }
+
+    CharactersConditions(choices: string): boolean {
+        if (choices.length !== 3) {
+            return false;
+        } else if (choices[0] === choices[1] || choices[0] === choices[2] || choices[1] === choices[2]) {
+            return false;
+        } else if (choices[0] < "1" && choices[0] > "7") {
+            return false;
+        } else if (choices[1] < "1" && choices[1] > "7") {
+            return false;
+        } else if (choices[2] < "1" && choices[2] > "7") {
+            return false;
+        }
+        return true;
+    }
+
+    Load(): void {
+        this.Affiche();
+        let choices: string | null = "000";
+        choices = this.StrNulltoStr(prompt("Veuillez choisir vos 3 personnages: "));
+        while (!this.CharactersConditions(choices)) {
+            choices = this.StrNulltoStr(prompt("Veuillez choisir 3 personnages différents: "));
+        }
+        let etage = new Etage()
+        etage.Affiche()
     }
 };
