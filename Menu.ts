@@ -115,11 +115,11 @@ class Classesmenu {
             return false;
         } else if (choices[0] === choices[1] || choices[0] === choices[2] || choices[1] === choices[2]) {
             return false;
-        } else if (choices[0] < "1" && choices[0] > "7") {
+        } else if (choices[0] < "1" || choices[0] > "7") {
             return false;
-        } else if (choices[1] < "1" && choices[1] > "7") {
+        } else if (choices[1] < "1" || choices[1] > "7") {
             return false;
-        } else if (choices[2] < "1" && choices[2] > "7") {
+        } else if (choices[2] < "1" || choices[2] > "7") {
             return false;
         }
         return true;
