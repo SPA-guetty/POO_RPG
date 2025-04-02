@@ -133,6 +133,6 @@ class Classesmenu {
             choices = this.StrNulltoStr(prompt("Veuillez choisir 3 personnages différents: "));
         }
         const game = new Game()
-        game.Start()
+        game.Start(choices)
     }
 };

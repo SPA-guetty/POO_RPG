@@ -18,7 +18,7 @@ export class classes {
     ];
 }
 
-class Animatueur {
+export class Animatueur {
     classname = "animatueur";
     UI = [
         "  の   ",
@@ -33,7 +33,7 @@ class Animatueur {
     RAM = 32;
 }
 
-class Nainformaticien {
+export class Nainformaticien {
     classname = "nainformaticien";
     UI = [
         "       ",
@@ -49,7 +49,7 @@ class Nainformaticien {
 
 }
 
-class Cyberserker {
+export class Cyberserker {
     classname = "cyberserker";
     UI = [
         "  尊   ",
@@ -64,7 +64,7 @@ class Cyberserker {
     RAM = 16;
 }
 
-class Captchattaque {
+export class Captchattaque {
     classname = "captchattaque";
     UI = [
         "  樂   ",
@@ -79,7 +79,7 @@ class Captchattaque {
     RAM = 32;
 }
 
-class Pèrecrea {
+export class Pèrecrea {
     classname = "pèrecrea";
     UI = [
         "  护 ☥ ",
@@ -94,7 +94,7 @@ class Pèrecrea {
     RAM = 18;
 }
 
-class Webscammer {
+export class Webscammer {
     classname = "webscammeur";
     UI = [
         "  の   ",
@@ -108,7 +108,7 @@ class Webscammer {
     RAM = 32;
 }
 
-class Archicube {
+export class Archicube {
     classname = "archicube";
     UI = [
         "  护 ⚘ ",
