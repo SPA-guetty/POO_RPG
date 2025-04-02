@@ -1,4 +1,10 @@
 export class Etage {
+
+    nb = 0;
+    ennemi1 = "";
+    ennemi2 = "";
+    ennemi3 = "";
+
     UI = [
         "#######################################################################################################################",
         "#      #      #      #      #      #      #      #      # ≡≡≡ #      #      #      #      #      #      #      #      #",
@@ -33,5 +39,20 @@ export class Etage {
         for (let i = 0; i < this.UI.length; i++) {
             console.log(this.UI[i]);
         }
+    }
+
+    constructor(nbennemis: number = 1) {
+        if (nbennemis > 0) {
+            this.nb = nbennemis;
+            this.ennemi1 = "1";
+            if (nbennemis > 1) {
+                this.ennemi2 = "2";
+            }
+            if (nbennemis > 2) {
+                this.ennemi3 = "3";
+            }
+        } else {
+            this.ennemi1 = "BOSS";
+        };
     }
 }

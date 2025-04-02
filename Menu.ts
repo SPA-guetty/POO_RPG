@@ -1,5 +1,5 @@
 import { Etage } from "./Etage.ts";
-import { game } from "./Game.ts";
+import { Game } from "./Game.ts";
 
 export class Mainmenu {
     UI = [
@@ -37,7 +37,7 @@ export class Mainmenu {
     affiche(): void {
         console.clear();
         for (let i = 0; i < this.UI.length; i++) {
-            let str = this.UI[i];
+            const str = this.UI[i];
     
             let coloredString = '';
             for (let j = 0; j < str.length; j++) {
@@ -59,7 +59,7 @@ export class Mainmenu {
             console.log("Veuillez rentrer un nombre valable.");
             choix = prompt("Votre choix:");
         }
-        let etage = new Etage();
+        const etage = new Etage();
         etage.Affiche();
         const classesmenu = new Classesmenu();
         classesmenu.Load()
@@ -132,7 +132,7 @@ class Classesmenu {
         while (!this.CharactersConditions(choices)) {
             choices = this.StrNulltoStr(prompt("Veuillez choisir 3 personnages différents: "));
         }
-        let etage = new Etage()
-        etage.Affiche()
+        const game = new Game()
+        game.Start()
     }
 };

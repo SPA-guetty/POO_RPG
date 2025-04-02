@@ -1,5 +1,5 @@
 import { Mainmenu } from "./Menu.ts";
-
+/*
 function Print() {
     const ui = [
         // └ ┴ ┬ ├ ─ ┼ ╜ ╝ ╣ ↕ ╢ ╣ V  ║ ╕ ╖ ╢ ╡ ┤ │ ¼ » ┌ ╛ └ ┴ ┬ ├ ─ ╗ ╝ ╞ ╟   ╛ ┐ └ ┴ ┬ ├ ─ ┼ ╞ ╟ ╚ ╔ ╔ ╩ ╦ ╠ ═   ╧ ╨ ╤ ╨ ╥ ╙ ╘ ╒ ╠ ╫ ╓╒ ╘ ╢
@@ -36,7 +36,7 @@ function Print() {
     for (let i=0; i<ui.length; i++) {
         console.log(ui[i]);
     }
-}
+}*/
 
-let mainMenu = new Mainmenu();
+const mainMenu = new Mainmenu();
 mainMenu.begin();

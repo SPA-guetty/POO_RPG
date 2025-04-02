@@ -1,6 +1,9 @@
 import { Ympeldown } from "./Ympeldown.ts";
 
-export class game {
+export class Game {
     ympeldown = new Ympeldown()
     
+    Start(): void {
+
+    }
 }
