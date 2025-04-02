@@ -69,8 +69,8 @@ export class Mainmenu {
 class Classesmenu {
     UI = [
         "#######################################################################################################################",
-        "#                                                                                                                     #",
-        "#         n°          1             2            3               4             5             6            7           #",
+        "#                  Animatueur Nainformaticien Cyberserker   Captchattaque   Pèrecrea     Webscammer    Archicube      #",
+        "#         n°           1             2            3               4             5             6            7          #",
         "#                                                                                                                     #",
         "#                     の                         尊              樂            护 ☥          の           护 ⚘        #",
         "#      Character      杀مــ         の          ⛨裁مــ         Ɵ═攻═Ɵ          息─┤          播          𓆰城─┤        #",
