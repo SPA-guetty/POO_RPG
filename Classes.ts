@@ -18,106 +18,136 @@ export class classes {
     ];
 }
 
+export class character {
+    classname: string;
+    ui: Array<string>;
+
+    processors: number; 
+    defense: number;
+    coding: number;
+    battery: number;
+    maxbattery: number;
+    ram: number;
+
+    constructor(selectedcharacter: Animatueur | Nainformaticien | Cyberserker | Captchattaque | Pèrecrea | Webscammer | Archicube) {
+        this.classname = selectedcharacter.classname;
+        this.ui = selectedcharacter.ui;
+        this.processors = selectedcharacter.processors;
+        this.defense = selectedcharacter.defense;
+        this.coding = selectedcharacter.coding;
+        this.battery = selectedcharacter.battery;
+        this.maxbattery = selectedcharacter.maxbattery;
+        this.ram = selectedcharacter.ram;
+    }
+}
+
 export class Animatueur {
     classname = "animatueur";
-    UI = [
+    ui = [
         "  の   ",
         "  杀مــ",
         "  刀   ",
     ];
 
-    Processeurs = 10;
-    Défense = 5;
-    Codage = 0;
-    Batterie = 50;
-    RAM = 32;
+    processors = 10;
+    defense = 5;
+    coding = 0;
+    battery = 50;
+    maxbattery = 50;
+    ram = 32;
 }
 
 export class Nainformaticien {
     classname = "nainformaticien";
-    UI = [
+    ui = [
         "       ",
         "  の   ",
         "  技ロ ",
     ];
 
-    Processeurs = 4;
-    Défense = 10;
-    Codage = 6;
-    Batterie = 70;
-    RAM = 16;
+    processors = 4;
+    defense = 10;
+    coding = 6;
+    battery = 70;
+    maxbattery = 70;
+    ram = 16;
 
 }
 
 export class Cyberserker {
     classname = "cyberserker";
-    UI = [
+    ui = [
         "  尊   ",
         " ⛨裁مــ",
         "  清   ",
     ];
 
-    Processeurs = 8;
-    Défense = 8;
-    Codage = 9;
-    Batterie = 70;
-    RAM = 16;
+    processors = 8;
+    defense = 8;
+    coding = 9;
+    battery = 70;
+    maxbattery = 70;
+    ram = 16;
 }
 
 export class Captchattaque {
     classname = "captchattaque";
-    UI = [
+    ui = [
         "  樂   ",
         "Ɵ═攻═Ɵ ",
         "  勇   ",
     ];
 
-    Processeurs = 4;
-    Défense = 5;
-    Codage = 8;
-    Batterie = 80;
-    RAM = 32;
+    processors = 4;
+    defense = 5;
+    coding = 8;
+    battery = 80;
+    maxbattery = 80;
+    ram = 32;
 }
 
 export class Pèrecrea {
     classname = "pèrecrea";
-    UI = [
+    ui = [
         "  护 ☥ ",
         "  息─┤ ",
         "  大 │ ",
     ];
 
-    Processeurs = 6;
-    Défense = 8;
-    Codage = 6;
-    Batterie = 100;
-    RAM = 18;
+    processors = 6;
+    defense = 8;
+    coding = 6;
+    battery = 100;
+    maxbattery = 100;
+    ram = 18;
 }
 
 export class Webscammer {
     classname = "webscammeur";
-    UI = [
+    ui = [
         "  の   ",
         "  播   ",
         "  扰   ",
     ];
-    Processeurs = 5;
-    Défense = 4;
-    Codage = 10;
-    Batterie = 80;
-    RAM = 32;
+    processors = 5;
+    defense = 4;
+    coding = 10;
+    battery = 80;
+    maxbattery = 80;
+    ram = 32;
 }
 
 export class Archicube {
     classname = "archicube";
-    UI = [
+    ui = [
         "  护 ⚘ ",
         " 𓆰城─┤ ",
         "  防 │ ",
     ];
-    Processeurs = 0;
-    Défense = 10;
-    Codage = 10;
-    Batterie = 80;
-    RAM = 32;
+    processors = 0;
+    defense = 10;
+    coding = 10;
+    battery = 80;
+    maxbattery = 80;
+    ram = 32;
 }

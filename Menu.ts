@@ -74,7 +74,7 @@ class Classesmenu {
         "#                                                                                                                     #",
         "#                     の                         尊              樂            护 ☥          の           护 ⚘        #",
         "#      Character      杀مــ         の          ⛨裁مــ         Ɵ═攻═Ɵ          息─┤          播          𓆰城─┤        #",
-        "#                     刀            技ロ         清              勇            大 │          扰           防 │         #",
+        "#                     刀            技ロ         清              勇            大 │          扰           防 │        #",
         "#                                                                                                                     #",
         "# Attaque physique:                                                                                                   #",
         "# Codage (magie):                                                                                                     #",

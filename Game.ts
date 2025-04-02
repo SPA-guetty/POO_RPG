@@ -5,14 +5,17 @@ import { Captchattaque } from "./Classes.ts";
 import { Pèrecrea } from "./Classes.ts";
 import { Webscammer } from "./Classes.ts";
 import { Archicube } from "./Classes.ts"
+
+import { character } from "./Classes.ts";
+
 import { Ympeldown } from "./Ympeldown.ts";
 
 class Team {
-    character1;
-    character2;
-    character3;
+    private character1;
+    private character2;
+    private character3;
 
-    characterslist: Array<Animatueur | Nainformaticien | Cyberserker | Captchattaque | Pèrecrea | Webscammer | Archicube> = [];
+    private characterslist: Array<character> = [];
 
     constructor(choices: string) {
         for (let i = 0; i <= 2; i++) {
@@ -36,13 +39,13 @@ class Team {
 
 
             if (i === 0) {
-                this.character1 = actualclass;
+                this.character1 = new character(actualclass);
                 this.characterslist.push(this.character1)
             } else if (i === 1) {
-                this.character2 = actualclass;
+                this.character2 = new character(actualclass);
                 this.characterslist.push(this.character2)
             } else {
-                this.character3 = actualclass;
+                this.character3 = new character(actualclass);
                 this.characterslist.push(this.character3)
             }
         }
@@ -51,8 +54,8 @@ class Team {
     GetTeam(): void {
         console.log("Voici votre équipe: \n\n")
         for (let i = 0; i < this.characterslist.length; i++) {
-            for (let line = 0; line < this.characterslist[i].UI.length; line++) {
-                console.log(this.characterslist[i].UI[line]);
+            for (let line = 0; line < this.characterslist[i].ui.length; line++) {
+                console.log(this.characterslist[i].ui[line]);
             }
             console.log(this.characterslist[i].classname + "\n")
         } 
@@ -60,7 +63,7 @@ class Team {
 }
 
 export class Game {
-    ympeldown = new Ympeldown()
+    private ympeldown = new Ympeldown()
     
     Start(choices: string): void {
         const team = new Team(choices);
