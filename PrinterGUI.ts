@@ -1,3 +1,5 @@
+import { Ympeldown } from "./Ympeldown.ts";
+import { creerEnnemi } from "./ennemi.ts";
 import { Mainmenu } from "./Menu.ts";
 /*
 function Print() {

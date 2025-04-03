@@ -1,3 +1,5 @@
+import { Ympeldown } from "./Ympeldown.ts";
+import { creerEnnemi } from "./ennemi.ts";
 import { Etage } from "./Etage.ts";
 import { Game } from "./Game.ts";
 
@@ -18,9 +20,6 @@ export class Mainmenu {
         "#                                                                                                                     #", // Moitié
         "#                                                                                                                     #",
         "#                                               1: Sélection des héros                                                #",
-        "#                                                                                                                     #",
-        "#                                                                                                                     #",
-        "#                                                                                                                     #",
         "#                                                                                                                     #",
         "#                                                                                                                     #",
         "#                                                                                                                     #",
@@ -53,16 +52,22 @@ export class Mainmenu {
     };
 
     begin(): void {
+        console.log("Main menu started");
         this.affiche();
-        let choix: string | null = prompt("Votre choix:");
-        for (;choix !== "1";) {
-            console.log("Veuillez rentrer un nombre valable.");
-            choix = prompt("Votre choix:");
+        console.log("1. Commencer une nouvelle partie");
+        console.log("2. Charger une partie");
+        console.log("3. Quitter le jeu");
+        const choix = prompt("Votre choix : ");
+        if (choix === "1") {
+            const game = new Game();
+            game.Start();
+        } else if (choix === "2") {
+            const game = new Game();
+            game.chargerJeu();
+            game.Start();
+        } else if (choix === "3") {
+            console.log("Au revoir !");
         }
-        const etage = new Etage();
-        etage.Affiche();
-        const classesmenu = new Classesmenu();
-        classesmenu.Load()
     }
 };
 
