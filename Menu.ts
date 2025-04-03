@@ -1,5 +1,6 @@
 import { Etage } from "./Etage.ts";
 import { Game } from "./Game.ts";
+import { Refresh } from "./Refresh.ts";
 
 export class Mainmenu {
     UI = [
@@ -35,7 +36,7 @@ export class Mainmenu {
     }
 
     affiche(): void {
-        console.clear();
+        new Refresh();
         for (let i = 0; i < this.UI.length; i++) {
             const str = this.UI[i];
     
@@ -96,7 +97,7 @@ class Classesmenu {
     ]
 
     Affiche() : void {
-        console.clear();
+        new Refresh();
         for (let i = 0; i < this.UI.length; i++) {
             console.log(this.UI[i]);
         }

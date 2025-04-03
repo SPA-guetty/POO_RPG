@@ -1,3 +1,5 @@
+import { Refresh } from "./Refresh.ts";
+
 export class Etage {
 
     nb = 0;
@@ -34,8 +36,7 @@ export class Etage {
     ];
 
     Affiche() : void {
-        console.clear();
-        console.clear();
+        new Refresh();
         for (let i = 0; i < this.UI.length; i++) {
             console.log(this.UI[i]);
         }
