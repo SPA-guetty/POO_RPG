@@ -2,8 +2,8 @@ import { creerEnnemi } from "./ennemi.ts";
 import { Etage } from "./Etage.ts";
 
 export class Ympeldown {
-    Etage1_1 = new Etage();
-    Etage1_2 = new Etage();
+    Etage1_1 = new Etage(1);
+    Etage1_2 = new Etage(1);
     EtageBoss1 = new Etage(-1);
     Etage2_1 = new Etage(1);
     Etage2_2 = new Etage(2);

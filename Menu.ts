@@ -2,6 +2,7 @@ import { Ympeldown } from "./Ympeldown.ts";
 import { creerEnnemi } from "./ennemi.ts";
 import { Etage } from "./Etage.ts";
 import { Game } from "./Game.ts";
+import { Refresh } from "./Refresh.ts";
 
 export class Mainmenu {
     UI = [
@@ -34,7 +35,7 @@ export class Mainmenu {
     }
 
     affiche(): void {
-        console.clear();
+        new Refresh();
         for (let i = 0; i < this.UI.length; i++) {
             const str = this.UI[i];
     
@@ -74,12 +75,12 @@ export class Mainmenu {
 class Classesmenu {
     UI = [
         "#######################################################################################################################",
-        "#                                                                                                                     #",
-        "#         n°          1             2            3               4             5             6            7           #",
+        "#                  Animatueur Nainformaticien Cyberserker   Captchattaque   Pèrecrea     Webscammer    Archicube      #",
+        "#         n°           1             2            3               4             5             6            7          #",
         "#                                                                                                                     #",
         "#                     の                         尊              樂            护 ☥          の           护 ⚘        #",
         "#      Character      杀مــ         の          ⛨裁مــ         Ɵ═攻═Ɵ          息─┤          播          𓆰城─┤        #",
-        "#                     刀            技ロ         清              勇            大 │          扰           防 │         #",
+        "#                     刀            技ロ         清              勇            大 │          扰           防 │        #",
         "#                                                                                                                     #",
         "# Attaque physique:                                                                                                   #",
         "# Codage (magie):                                                                                                     #",
@@ -101,7 +102,7 @@ class Classesmenu {
     ]
 
     Affiche() : void {
-        console.clear();
+        new Refresh();
         for (let i = 0; i < this.UI.length; i++) {
             console.log(this.UI[i]);
         }
@@ -138,6 +139,6 @@ class Classesmenu {
             choices = this.StrNulltoStr(prompt("Veuillez choisir 3 personnages différents: "));
         }
         const game = new Game()
-        game.Start()
+        game.Start(choices)
     }
 };
