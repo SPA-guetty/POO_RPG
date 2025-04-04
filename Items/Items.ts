@@ -64,3 +64,27 @@ export class ShinyLaurentSkull extends Item {
         super("Laurent's shiny skull", "Protège des attaques physiques", "armor", 999);
     }
 }
+
+export class Mysterycode extends Item {
+    constructor() {
+        super("Mystery code", "Un code mystérieux aux grands pouvoirs de destruction", "mystery", 0);
+    }
+}
+
+export class USBkey extends Item {
+    constructor() {
+        super("Clé USB", "Une clé USB au code mystique, elle aide les alliés ou fait mal aux ennemis", "USB", 0);
+    }
+}
+
+export class ExitKeys extends Item {
+    constructor() {
+        super("Exit keys", "Permet de sortir de Ympeldown", "exit", 0);
+    }
+}
+
+export class Portoloin extends Item {
+    constructor() {
+        super("Portoloin", "Permet de se téléporter hors de Ympeldown", "teleport", 0);
+    }
+}

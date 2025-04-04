@@ -9,6 +9,7 @@ export class Animatueur {
     processors = 10;
     defense = 5;
     coding = 0;
+    antivirus = 3;
     battery = 50;
     maxbattery = 50;
     ram = 32;
@@ -23,8 +24,9 @@ export class Nainformaticien {
     ];
 
     processors = 4;
-    defense = 10;
+    defense = 3;
     coding = 6;
+    antivirus = 10;
     battery = 70;
     maxbattery = 70;
     ram = 16;
@@ -39,9 +41,10 @@ export class Cyberserker {
         "  清   ",
     ];
 
-    processors = 8;
-    defense = 8;
-    coding = 9;
+    processors = 5;
+    defense = 7;
+    coding = 6;
+    antivirus = 8;
     battery = 70;
     maxbattery = 70;
     ram = 16;
@@ -55,9 +58,10 @@ export class Captchattaque {
         "  勇   ",
     ];
 
-    processors = 4;
+    processors = 7;
     defense = 5;
-    coding = 8;
+    coding = 7;
+    antivirus = 4;
     battery = 80;
     maxbattery = 80;
     ram = 32;
@@ -74,9 +78,10 @@ export class Pèrecrea {
     processors = 6;
     defense = 8;
     coding = 6;
+    antivirus = 4;
     battery = 100;
     maxbattery = 100;
-    ram = 18;
+    ram = 24;
 }
 
 export class Webscammer {
@@ -87,8 +92,9 @@ export class Webscammer {
         "  扰   ",
     ];
     processors = 5;
-    defense = 4;
+    defense = 6;
     coding = 10;
+    antivirus = 5;
     battery = 80;
     maxbattery = 80;
     ram = 32;
@@ -102,8 +108,9 @@ export class Archicube {
         "  防 │ ",
     ];
     processors = 0;
-    defense = 10;
+    defense = 2;
     coding = 10;
+    antivirus = 10;
     battery = 80;
     maxbattery = 80;
     ram = 32;
