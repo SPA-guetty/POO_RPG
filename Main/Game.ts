@@ -1,10 +1,4 @@
-import { Animatueur } from "../Classes/Classes.ts";
-import { Nainformaticien } from "../Classes/Classes.ts";
-import { Cyberserker } from "../Classes/Classes.ts";
-import { Captchattaque } from "../Classes/Classes.ts";
-import { Pèrecrea } from "../Classes/Classes.ts";
-import { Webscammer } from "../Classes/Classes.ts";
-import { Archicube } from "../Classes/Classes.ts"
+import * as allies from "../Classes/Allies.ts";
 
 import { character } from "../Classes/Classes.ts";
 
@@ -22,19 +16,19 @@ class Team {
             const selection = choices[i];
             let actualclass;
             if (selection === "1") {
-                actualclass = new Animatueur()
+                actualclass = new allies.Animatueur()
             } else if (selection === "2") {
-                actualclass = new Nainformaticien();
+                actualclass = new allies.Nainformaticien();
             } else if (selection === "3") {
-                actualclass = new Cyberserker();
+                actualclass = new allies.Cyberserker();
             } else if (selection === "4") {
-                actualclass = new Captchattaque();
+                actualclass = new allies.Captchattaque();
             } else if (selection === "5") {
-                actualclass = new Pèrecrea();
+                actualclass = new allies.Pèrecrea();
             } else if (selection === "6") {
-                actualclass = new Webscammer();
+                actualclass = new allies.Webscammer();
             } else {
-                actualclass = new Archicube();
+                actualclass = new allies.Archicube();
             }
 
 
