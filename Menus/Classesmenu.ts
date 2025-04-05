@@ -4,18 +4,20 @@ import { Game } from "../Main/Game.ts";
 export class Classesmenu {
     UI = [
         "#######################################################################################################################",
-        "#                  Animatueur Nainformaticien Cyberserker   Captchattaque   Pèrecrea     Webscammer    Archicube      #",
-        "#         n°           1             2            3               4             5             6            7          #",
         "#                                                                                                                     #",
-        "#                     の                         尊              樂            护 ☥          の           护 ⚘        #",
-        "#      Character      杀مــ         の          ⛨裁مــ         Ɵ═攻═Ɵ          息─┤          播          𓆰城─┤        #",
-        "#                     刀            技ロ         清              勇            大 │          扰           防 │        #",
+        "#                    Animatueur    Nainformaticien   Cyberserker   Captchattaque      Webscammer      Archicube       #",
+        "#         n°             1                2              3               4                5               6           #",
+        "#                                                                                                                     #",
+        "#                        の                              尊              樂               の             护 ⚘         #",
+        "#      Character         杀مــ           の            ⛨裁مــ          Ɵ═攻═Ɵ             播            𓆰城─┤         #",
+        "#                        刀              技ロ            清              勇               扰             防 │         #",
         "#                                                                                                                     #",
         "# Attaque physique:                                                                                                   #",
         "# Codage (magie):                                                                                                     #",
-        "# Défense:                                                                                                            #",
-        "# Batterie (pv):                                                                                                      #",
-        "# RAM (endurance):                                                                                                    #", // Moitié
+        "# Défense physique:                                                                                                   #",
+        "# Défense informatique:                                                                                               #",
+        "# Batterie (pv):                                                                                                      #", // Moitié
+        "# RAM (endurance):                                                                                                    #",
         "#                                                                                                                     #",
         "# Attaque n°1:                                                                                                        #",
         "# Dégâts:                                                                                                             #",
@@ -50,11 +52,11 @@ export class Classesmenu {
             return false;
         } else if (choices[0] === choices[1] || choices[0] === choices[2] || choices[1] === choices[2]) {
             return false;
-        } else if (choices[0] < "1" || choices[0] > "7") {
+        } else if (choices[0] < "1" || choices[0] > "6") {
             return false;
-        } else if (choices[1] < "1" || choices[1] > "7") {
+        } else if (choices[1] < "1" || choices[1] > "6") {
             return false;
-        } else if (choices[2] < "1" || choices[2] > "7") {
+        } else if (choices[2] < "1" || choices[2] > "6") {
             return false;
         }
         return true;

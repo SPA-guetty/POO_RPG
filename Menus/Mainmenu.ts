@@ -8,6 +8,7 @@ export class Mainmenu {
         "#                                                                                                                     #",
         "#                                                                                                                     #",
         "#                                                                                                                     #",
+        "#                                                                                                                     #",
         "#                         \\#\\   /#/   /######|    /#####|      /##\\      |######\\   |######|                          #",
         "#                          \\#\\ /#/   /#/         |#|          /#/\\#\\     |#|   |#|  |#|                               #",
         "#                           \\# #/    \\#\\         |#|         /#/  \\#\\    |#|   |#|  |#|                               #",
@@ -19,9 +20,10 @@ export class Mainmenu {
         "#                                                                                                                     #", // Moitié
         "#                                                                                                                     #",
         "#                                                 1: Create new game                                                  #",
-        "#                                                   2: Load a game                                                    #",
-        "#                                                      3: Leave                                                       #",
         "#                                                                                                                     #",
+        "#                                                   2: Load a game                                                    #",
+        "#                                                                                                                     #",
+        "#                                                      3: Leave                                                       #",
         "#                                                                                                                     #",
         "#                                                                                                                     #",
         "#                                                                                                                     #",
@@ -42,7 +44,7 @@ export class Mainmenu {
     
             let coloredString = '';
             for (let j = 0; j < str.length; j++) {
-                if (j !== 0 && j !== str.length - 1 && i >= 4 && i < 11) {
+                if (j !== 0 && j !== str.length - 1 && i >= 5 && i < 12) {
                     coloredString += '\x1b[31m' + str[j] + '\x1b[0m'; //rouge
                 } else {
                     coloredString += '\x1b[37m' + str[j] + '\x1b[0m'; //blanc

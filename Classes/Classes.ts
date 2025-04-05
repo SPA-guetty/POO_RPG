@@ -1,20 +1,25 @@
-import * as allies from './Allies.ts'
+import { Archicube } from "../Classes/Allies/Archicube.ts";
+import { Webscammer } from "../Classes/Allies/Webscammer.ts";
+import { Captchattaque } from "../Classes/Allies/Captchattaque.ts";
+import { Cyberserker } from "../Classes/Allies/Cyberserker.ts";
+import { Nainformaticien } from "../Classes/Allies/Nainformaticien.ts";
+import { Animatueur } from "../Classes/Allies/Animatueur.ts";
 
-export class classes {
-    animatueur = new allies.Animatueur();
-    nainformaticien = new allies.Nainformaticien();
-    cyberserker = new allies.Cyberserker();
-    captchattaque = new allies.Captchattaque();
-    perecrea = new allies.Pèrecrea()
-    webscammeur = new allies.Webscammer();
-    archicube = new allies.Archicube();
+import * as capacity from '../Main/Capacity.ts';
+
+export class classelist {
+    animatueur = new Animatueur();
+    nainformaticien = new Nainformaticien();
+    cyberserker = new Cyberserker();
+    captchattaque = new Captchattaque();
+    webscammeur = new Webscammer();
+    archicube = new Archicube();
 
     classlist = [
         this.animatueur, 
         this.nainformaticien, 
         this.cyberserker, 
         this.captchattaque, 
-        this.perecrea, 
         this.webscammeur, 
         this.archicube,
     ];
@@ -24,21 +29,29 @@ export class character {
     classname: string;
     ui: Array<string>;
 
-    processors: number; 
+    attack: number; 
     defense: number;
-    coding: number;
+    processors: number;
     battery: number;
     maxbattery: number;
     ram: number;
 
-    constructor(selectedcharacter: allies.Animatueur | allies.Nainformaticien | allies.Cyberserker | allies.Captchattaque | allies.Pèrecrea | allies.Webscammer | allies.Archicube) {
+    capacity1: capacity.Capacity;
+    capacity2: capacity.Capacity;
+
+    passive: capacity.Passive | null;
+
+    constructor(selectedcharacter: Animatueur | Nainformaticien | Cyberserker | Captchattaque | Webscammer | Archicube) {
         this.classname = selectedcharacter.classname;
         this.ui = selectedcharacter.ui;
-        this.processors = selectedcharacter.processors;
+        this.attack = selectedcharacter.attack;
         this.defense = selectedcharacter.defense;
-        this.coding = selectedcharacter.coding;
+        this.processors = selectedcharacter.processors;
         this.battery = selectedcharacter.battery;
         this.maxbattery = selectedcharacter.maxbattery;
         this.ram = selectedcharacter.ram;
+        this.capacity1 = selectedcharacter.capacity1;
+        this.capacity2 = selectedcharacter.capacity2;
+        this.passive = selectedcharacter.passive;
     }
 }
