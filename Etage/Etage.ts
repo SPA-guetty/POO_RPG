@@ -1,11 +1,14 @@
 import { Refresh } from "../Misc/Refresh.ts";
 
+import { Ennemi } from "../Classes/Ennemies/Ennemies.ts";
+import { EnnemiesList } from "../Classes/Ennemies/EnnemiesList.ts";
+
 export class Etage {
 
-    nb = 0;
-    ennemi1 = "";
-    ennemi2 = "";
-    ennemi3 = "";
+    private nb = 0;
+    private ennemi1: Ennemi | null = null;
+    private ennemi2: Ennemi | null = null;
+    private ennemi3: Ennemi | null = null;
 
     public UI = [
         "#######################################################################################################################",
@@ -45,17 +48,20 @@ export class Etage {
     }
 
     constructor(nbennemis: number = 1) {
+        const ennemilist = new EnnemiesList().getEnnemiList(nbennemis);
         if (nbennemis > 0) {
-            this.nb = nbennemis;
-            this.ennemi1 = "1";
-            if (nbennemis > 1) {
-                this.ennemi2 = "2";
-            }
-            if (nbennemis > 2) {
-                this.ennemi3 = "3";
+            if (nbennemis === 1) {
+                this.ennemi2 = ennemilist[0];
+            } else if (nbennemis === 2) {
+                this.ennemi1 = ennemilist[0];
+                this.ennemi3 = ennemilist[1];
+            } else {
+                this.ennemi1 = ennemilist[0];
+                this.ennemi2 = ennemilist[1];
+                this.ennemi3 = ennemilist[2];
             }
         } else {
-            this.ennemi1 = "BOSS";
+            this.ennemi2 = ennemilist[0];
         };
     }
 }

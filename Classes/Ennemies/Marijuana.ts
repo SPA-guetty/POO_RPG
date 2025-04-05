@@ -1,4 +1,4 @@
-import { Ennemi } from "../Ennemis.ts";
+import { Ennemi } from "./Ennemies.ts";
 import * as capacity from "../../Main/Capacity.ts";
 
 export class Marijuana extends Ennemi {

@@ -1,7 +1,7 @@
 import * as Items from "../Items/Items.ts";
 import * as capacity from '../Main/Capacity.ts';
 
-export class Bosses {
+export class Boss {
     public classname: string;
     public ui: Array<string>;
 
@@ -36,7 +36,7 @@ export class Bosses {
     }
 }
 
-export class Titi extends Bosses {
+export class Titi extends Boss {
     constructor() {
         super(
             "Titi", //classname
@@ -77,12 +77,12 @@ export class Titi extends Bosses {
     }
 }
 
-export class Laurent extends Bosses {
+export class Laurent extends Boss {
     constructor() {
         super(
             "Laurent", //classname
             [
-                "  乁   ",
+                "  强   ",
                 "  秃   ",
                 "  大   ",
             ],
@@ -118,12 +118,12 @@ export class Laurent extends Bosses {
     }
 }
 
-export class Pascalou extends Bosses {
+export class Pascalou extends Boss {
     constructor() {
         super(
             "Pascalou", //classname
             [
-                "  乁   ",
+                "  强   ",
                 "  攻   ",
                 "  防   ",
             ],
@@ -159,12 +159,12 @@ export class Pascalou extends Bosses {
     }
 }
 
-export class Bidoof extends Bosses {
+export class Bidoof extends Boss {
     constructor() {
         super(
             "Bidoof", //classname
             [
-                "  乁   ",
+                "  强   ",
                 "  齿   ",
                 "  共   ",
             ],
@@ -200,14 +200,14 @@ export class Bidoof extends Bosses {
     }
 }
 
-class Romeo extends Bosses {
+class Romeo extends Boss {
     constructor() {
         super(
             "Romeo", //classname
             [
-                "  乁   ",
-                "  你   ",
-                "  好   ",
+                "  强   ",
+                "  络   ",
+                "  情   ",
             ],
             20, //attack
             20, //defense
@@ -241,14 +241,14 @@ class Romeo extends Bosses {
     }
 }
 
-class Juliette extends Bosses {
+class Juliette extends Boss {
     constructor() {
         super(
             "Juliette", //classname
             [
                 "  乁   ",
-                "  你   ",
-                "  好   ",
+                "  心   ",
+                "  情   ",
             ],
             10, //attack
             8, //defense
@@ -283,18 +283,23 @@ class Juliette extends Bosses {
 }
 
 export class RomeoJuliette {
-    romeo: Romeo = new Romeo();
-    juliette: Juliette = new Juliette();
+    romeo: Romeo;
+    juliette: Juliette;
+
+    constructor() {
+        this.romeo = new Romeo();
+        this.juliette = new Juliette();
+    }
 }
 
-export class Juju extends Bosses {
+export class Juju extends Boss {
     constructor() {
         super(
             "Juju", //classname
             [
-                "  乁   ",
-                "  風༄  ",
-                "  死   ",
+                "  强   ",
+                "  知   ",
+                "  识   ",
             ],
             30, //attack
             50, //defense
@@ -305,28 +310,30 @@ export class Juju extends Bosses {
             10000, //expreward
             new Items.Tiesselune(), //drop
 
-
+            new capacity.Capacity(
+                "Focus", // name
+                "Attaque son plus faible ennemi", // description
+                1, // number of targets
+                false, // random ennemy
+                "physical", // type
+                0, // RAM
+                [new capacity.CapacityEffect("batterie", -20)], // statistics
+            ),
 
             new capacity.Capacity(
                 "\"I know the code\"", // name
-                "Reflect the next attack", // description
+                "Renvoie la prochaine attaque avec des dégâts augmentés", // description
                 1, // number of targets
                 false, // random ennemy
                 "mirror", // type
                 0, // RAM
-                [new capacity.CapacityEffect("defense", 999), new capacity.CapacityEffect("battery", -1)], // statistics
+                [new capacity.CapacityEffect("defense", 999), new capacity.CapacityEffect("battery", -2)], // statistics
             ),
-            
-            // passif voir attaque supplémentaire
-            /*"On va voir si t’as compris... ou juste copié."
-            Analyse les ennemis. 
-            Si un adversaire a utilisé une compétence déjà vue dans le combat, 
-            peut pas utiliser la même attaque 2 tours de suite*/
         )
     }
 }
 
-export class AnilMagellanDende extends Bosses {
+export class AnilMagellanDende extends Boss {
     constructor() {
         super(
             "Anil Magellan-Dende", //classname
