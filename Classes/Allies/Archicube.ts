@@ -34,5 +34,11 @@ export class Archicube {
         [new capacity.CapacityEffect("protection", 999 )], // statistics
     );
 
-    passive = null;
+    passive = new capacity.Passive(
+            "Inflation", // name: string;
+            "+5% des crédits du combat par tour", // description: string;
+            "misc", // type: string;
+            "credits", // effect: string;
+            .6, // intensity: number;
+        );
 }

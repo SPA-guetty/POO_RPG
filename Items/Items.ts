@@ -77,6 +77,12 @@ export class USBkey extends Item {
     }
 }
 
+export class Tiesselune extends Item {
+    constructor() {
+        super("Tiesselune", "Chuis pas là ! => Protège des 3 prochains dégâts", "star", 3);
+    }
+}
+
 export class ExitKeys extends Item {
     constructor() {
         super("Exit keys", "Permet de sortir de Ympeldown", "exit", 0);

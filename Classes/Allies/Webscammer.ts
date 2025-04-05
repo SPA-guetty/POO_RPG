@@ -36,9 +36,9 @@ export class Webscammer {
 
     passive = new capacity.Passive(
         "Advertising", // name: string;
-        "Donne 40% de crédits en plus à la fin d'un combat", // description: string;
+        "Donne 40% d'expérience en plus à la fin d'un combat", // description: string;
         "misc", // type: string;
-        "credits", // effect: string;
+        "xp", // effect: string;
         .4, // intensity: number;
     );
 }

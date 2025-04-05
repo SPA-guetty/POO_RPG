@@ -32,6 +32,7 @@ export class character {
     attack: number; 
     defense: number;
     processors: number;
+    antivirus: number;
     battery: number;
     maxbattery: number;
     ram: number;
@@ -47,6 +48,7 @@ export class character {
         this.attack = selectedcharacter.attack;
         this.defense = selectedcharacter.defense;
         this.processors = selectedcharacter.processors;
+        this.antivirus = selectedcharacter.antivirus;
         this.battery = selectedcharacter.battery;
         this.maxbattery = selectedcharacter.maxbattery;
         this.ram = selectedcharacter.ram;
