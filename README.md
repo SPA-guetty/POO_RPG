@@ -13,11 +13,7 @@
 
 ## **À propos du projet**
 
-**Yscape** est un jeu de rôle textuel où les joueurs peuvent :
-- Créer des personnages personnalisés.
-- Explorer des mondes imaginaires.
-- Combattre des ennemis.
-- Progresser en compétences et débloquer de nouvelles capacités.
+**Yscape** est un jeu de rôle textuel où les joueurs peuvent sélectionner 3 classes parmis une liste de 6 et dont le but est de s'évader de la terrible prison de Ympeldown.
 
 Ce projet a été conçu pour démontrer l'application des concepts de la POO dans un contexte pratique et amusant.
 
@@ -42,11 +38,11 @@ Ces concepts permettent de structurer le code de manière modulaire, réutilisab
 
 ## **Fonctionnalités**
 
-- **Création de personnages** : Personnalisez votre héros avec des attributs uniques.
+- **Création de personnages** : Personnalisez votre héros inspirés d'Ynov.
 - **Système de combat** : Engagez des batailles stratégiques contre des ennemis.
 - **Gestion des inventaires** : Collectez, utilisez et échangez des objets.
-- **Progression** : Gagnez de l'expérience, montez en niveau et débloquez de nouvelles compétences.
-- **Exploration** : Parcourez des environnements variés et découvrez des quêtes.
+- **Progression** : Gagnez de l'expérience, montez en niveau et devenez plus puissant.
+- **Objectif** : Vaincre le directeur général de la prison de Ympeldown afin d'y échapper.
 
 
 ## **Technologies utilisées**
@@ -70,22 +66,21 @@ Ces concepts permettent de structurer le code de manière modulaire, réutilisab
 
 3. **Exécuter le jeu** :
 
-   deno run PrinterGUI.ts
+   deno run Loader.ts
   
   
 ## **Structure du projet**
 
-Voici une description des fichiers et dossiers principaux qui composent ce projet :
+Voici une description des dossiers principaux qui composent ce projet :
 
-- **`main.ts`** : Le point d'entrée du jeu. Ce fichier initialise le jeu et gère la boucle principale.
-- **`Game.ts`** : Contient la logique principale du jeu, y compris la gestion des tours, des combats, et des interactions entre les joueurs et les ennemis.
-- **`ennemi.ts`** : Définit les classes pour les ennemis, leurs comportements et leurs caractéristiques.
-- **`Ympeldown.ts`** : Gère les étages ou niveaux du jeu, y compris leur structure et leur contenu.
-- **`Etage.ts`** : Implémente la classe `Etage`, qui représente un niveau ou une zone spécifique du jeu.
-- **`PrinterGUI.ts`** : Gère l'affichage des éléments textuels dans le terminal.
-- **`Menu.ts`** : Implémente le menu principal du jeu, permettant de commencer une nouvelle partie, charger une partie existante ou quitter le jeu.
+- **`Menus`** : Le point d'entrée du jeu. Ce dossier initialise le jeu.
+- **`Main`** : Contient la logique principale du jeu, y compris la gestion des tours, des combats, et des interactions entre les joueurs et les ennemis.
+- **`Classes/Ennemies`** : Définit les classes pour les ennemis et leurs caractéristiques.
+- **`Classes/Allies`** : Définit les classes pour les personnages jouables et leurs caractéristiques.
+- **`Classes/Bosses`** : Définit les classes pour les bosses et leurs caractéristiques.
+- **`Etage`** : Gère les étages ou niveaux du jeu, y compris leur structure et leur contenu.
+- **`Misc`** : Contient des éléments plus ou moins importants au fonctionnennement du jeu, sans en être directement lié.
 - **`README.md`** : Ce fichier, qui documente le projet et fournit des instructions pour son utilisation.
-- **`sauvegarde.json`** : (Optionnel) Fichier de sauvegarde contenant l'état actuel du jeu.
 
 ## **Auteurs**
 
