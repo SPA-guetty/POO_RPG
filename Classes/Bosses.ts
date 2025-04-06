@@ -61,7 +61,7 @@ export class Titi extends Boss {
                 true, // random ennemy
                 "physical", // type
                 0, // RAM
-                [new capacity.CapacityEffect("batterie", -10)], // statistics
+                [new capacity.CapacityEffect("battery", -10)], // statistics
             ),
 
             new capacity.Capacity(
@@ -71,7 +71,7 @@ export class Titi extends Boss {
                 true, // random ennemy
                 "physical", // type
                 0, // RAM
-                [new capacity.CapacityEffect("batterie", -25)], // statistics
+                [new capacity.CapacityEffect("battery", -25)], // statistics
             ),
         )
     }
@@ -102,7 +102,7 @@ export class Laurent extends Boss {
                 true, // random ennemy
                 "physical", // type
                 0, // RAM
-                [new capacity.CapacityEffect("batterie", -25)], // statistics
+                [new capacity.CapacityEffect("battery", -25)], // statistics
             ),
 
             new capacity.Capacity(
@@ -153,7 +153,7 @@ export class Pascalou extends Boss {
                 true, // random ennemy
                 "physical, random" , // type
                 0, // RAM
-                [new capacity.CapacityEffect("batterie", -25), new capacity.CapacityEffect("batterie", -10), new capacity.CapacityEffect("defense", -0.8), new capacity.CapacityEffect("attaque", -0.5)], // statistics
+                [new capacity.CapacityEffect("battery", -25), new capacity.CapacityEffect("battery", -10), new capacity.CapacityEffect("defense", -0.8), new capacity.CapacityEffect("attack", -0.5)], // statistics
             ),
         )
     }
@@ -184,7 +184,7 @@ export class Bidoof extends Boss {
                 true, // random ennemy
                 "physical", // type
                 0, // RAM
-                [new capacity.CapacityEffect("batterie", -25)], // statistics
+                [new capacity.CapacityEffect("battery", -25)], // statistics
             ),
 
             new capacity.Capacity(
@@ -194,7 +194,7 @@ export class Bidoof extends Boss {
                 true, // random ennemy
                 "physical, random" , // type
                 0, // RAM
-                [new capacity.CapacityEffect("batterie", -50), new capacity.CapacityEffect("batterie", 0)], // statistics
+                [new capacity.CapacityEffect("battery", -50), new capacity.CapacityEffect("battery", 0)], // statistics
             ),
         )
     }
@@ -235,7 +235,7 @@ class Romeo extends Boss {
                 true, // random ennemy
                 "code", // type
                 0, // RAM
-                [new capacity.CapacityEffect("attaque", -999), new capacity.CapacityEffect("battery", 20)], // statistics
+                [new capacity.CapacityEffect("battery", -999), new capacity.CapacityEffect("battery", 20)], // statistics
             ),
         )
     }
@@ -317,7 +317,7 @@ export class Juju extends Boss {
                 false, // random ennemy
                 "physical", // type
                 0, // RAM
-                [new capacity.CapacityEffect("batterie", -20)], // statistics
+                [new capacity.CapacityEffect("battery", -20)], // statistics
             ),
 
             new capacity.Capacity(
@@ -359,7 +359,7 @@ export class AnilMagellanDende extends Boss {
                 true, // random ennemy
                 "physical", // type
                 0, // RAM
-                [new capacity.CapacityEffect("batterie", -20), new capacity.CapacityEffect("attack", -0.5)], // statistics
+                [new capacity.CapacityEffect("battery", -20), new capacity.CapacityEffect("attack", -0.5)], // statistics
             ),
 
             new capacity.Capacity(
@@ -369,7 +369,7 @@ export class AnilMagellanDende extends Boss {
                 true, // random ennemy
                 "physical", // type
                 0, // RAM
-                [new capacity.CapacityEffect("batterie", -20)], // statistics
+                [new capacity.CapacityEffect("battery", -20)], // statistics
             ),
         )
     }

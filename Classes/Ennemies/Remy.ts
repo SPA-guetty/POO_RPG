@@ -10,7 +10,7 @@ export class Remy extends Ennemy {
                 "  敌   ",
                 "  共   ",
             ],
-            7, //attack
+            5, //attack
             8, //defense
             6, //processors
             2, //antivirus
@@ -25,7 +25,7 @@ export class Remy extends Ennemy {
                 true, // random ennemy
                 "physical", // type
                 0, // RAM
-                [new capacity.CapacityEffect("batterie", -10)], // statistics
+                [new capacity.CapacityEffect("battery", -10)], // statistics
             ),
 
             new capacity.Capacity(
@@ -35,7 +35,7 @@ export class Remy extends Ennemy {
                 true, // random ennemy
                 "physical, dangerous", // type
                 0, // RAM
-                [new capacity.CapacityEffect("batterie", -20)], // statistics
+                [new capacity.CapacityEffect("battery", -20)], // statistics
             ),
         )
     }

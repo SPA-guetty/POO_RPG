@@ -46,6 +46,27 @@ export class Team {
         }
     }
 
+    Heal(nb: number) {
+        if (this.character1!.battery > 0) {
+            this.character1!.battery += nb;
+            if (this.character1!.battery > this.character1!.maxbattery) {
+                this.character1!.battery = this.character1!.maxbattery;
+            }
+        }
+        if (this.character2!.battery > 0) {
+            this.character2!.battery += nb;
+            if (this.character2!.battery > this.character2!.maxbattery) {
+                this.character2!.battery = this.character2!.maxbattery;
+            }
+        }
+        if (this.character3!.battery > 0) {
+            this.character3!.battery += nb;
+            if (this.character3!.battery > this.character3!.maxbattery) {
+                this.character3!.battery = this.character3!.maxbattery;
+            }
+        }
+    }
+
     GetTeam(): Array<character> {
         return this.characterslist;
     }

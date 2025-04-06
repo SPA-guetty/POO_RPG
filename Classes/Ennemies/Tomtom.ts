@@ -12,7 +12,7 @@ export class Tomtom extends Ennemy {
             ],
             2, //attack
             8, //defense
-            10, //processors
+            6, //processors
             10, //antivirus
             120, //battery
             120, //maxbattery
@@ -25,7 +25,7 @@ export class Tomtom extends Ennemy {
                 true, // random ennemy
                 "code", // type
                 0, // RAM
-                [new capacity.CapacityEffect("batterie", -10)], // statistics
+                [new capacity.CapacityEffect("battery", -10)], // statistics
             ),
 
             null,

@@ -31,7 +31,7 @@ export class Webscammer {
         true, // random ennemy
         "debuff", // type
         2, // RAM
-        [new capacity.CapacityEffect("attaque", 0.9), new capacity.CapacityEffect("defense", 0.9), new capacity.CapacityEffect("code", 0.9), new capacity.CapacityEffect("antivirus", 0.9)], // statistics
+        [new capacity.CapacityEffect("attack", 0.9), new capacity.CapacityEffect("defense", 0.9), new capacity.CapacityEffect("code", 0.9), new capacity.CapacityEffect("antivirus", 0.9)], // statistics
     );
 
     passive = new capacity.Passive(

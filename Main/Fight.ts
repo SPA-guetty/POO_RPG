@@ -117,6 +117,7 @@ export class Fight {
     }
 
     EnnemyTurn(ennemy: number) {
+        console.log(this.ennemies[ennemy]?.classname + " attaque!")
         let capacity = this.ennemies[ennemy]!.capacity1;
         if (this.ennemies[ennemy]!.capacity2 !== null) {
             if (Randomnumber.Random(0, 10) <= 3) {
@@ -128,7 +129,7 @@ export class Fight {
         if (capacity.numberoftargets === 1) {
             nb = Randomnumber.Random(0, this.CountAllies()-1);
 
-            let count = 0;
+            let count = -1;
             for (let i = 0; i < 3; i++) {
                 if (this.allies[i].battery > 0) {
                     count++

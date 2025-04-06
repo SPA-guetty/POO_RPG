@@ -16,9 +16,11 @@ import { Randomnumber } from "../Misc/Randomizer.ts";
 
 export class UseCapacity {
     static Use(allies: Array<character | Ennemy | null>, ennemies: Array<character | Ennemy | null>, attacker: number, target: number, capacity: Capacity) {
+        console.log("Capacity is used: " + capacity.name)
         if (capacity.type.includes("code") || capacity.type.includes("physical") || capacity.type.includes("heal")) {
             for (let i = 0; i < capacity.effect.length; i++) {
                 if (capacity.effect[i].effect === "battery") {
+
                     if (target === -1) { // All ennemies
                         for (let ennemy = 0; ennemy < 3; ennemy++) {
                             if (ennemies[ennemy] !== null && ennemies[ennemy]!.battery > 0) {
@@ -38,7 +40,7 @@ export class UseCapacity {
             this.Steal(allies, ennemies, allies[attacker])
         } else if (capacity.type.includes("buff")) {
             for (let i = 0; i < capacity.effect.length; i++) {
-                if (capacity.effect[i].effect === "defense" || capacity.effect[i].effect === "attaque") {
+                if (capacity.effect[i].effect === "defense" || capacity.effect[i].effect === "attack") {
                     if (capacity.type === "buff") {
                         if (target === -1) {
                             this.Buff(allies, capacity.effect[i]);
@@ -117,7 +119,7 @@ export class UseCapacity {
     static Buff(targets: Array<character | Ennemy | null>, effect: CapacityEffect) {
         for (let target = 0; target < 3; target++) {
             if (targets[target] !== null) {
-                if (effect.effect === "attaque") {
+                if (effect.effect === "attack") {
                     targets[target]!.attack = targets[target]!.attack * effect.intensity;
                 } else if (effect.effect === "defense") {
                     targets[target]!.defense = targets[target]!.defense * effect.intensity;

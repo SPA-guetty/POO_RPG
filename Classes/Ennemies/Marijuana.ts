@@ -10,9 +10,9 @@ export class Marijuana extends Ennemy {
                 "  敌   ",
                 "  共   ",
             ],
-            2, //attack
+            6, //attack
             4, //defense
-            10, //processors
+            6, //processors
             4, //antivirus
             200, //battery
             200, //maxbattery
@@ -25,7 +25,7 @@ export class Marijuana extends Ennemy {
                 true, // random ennemy
                 "code", // type
                 0, // RAM
-                [new capacity.CapacityEffect("batterie", -15)], // statistics
+                [new capacity.CapacityEffect("battery", -15)], // statistics
             ),
 
             new capacity.Capacity(
@@ -35,7 +35,7 @@ export class Marijuana extends Ennemy {
                 true, // random ennemy
                 "code", // type
                 0, // RAM
-                [new capacity.CapacityEffect("batterie", -10)], // statistics
+                [new capacity.CapacityEffect("battery", -10)], // statistics
             ),
         )
     }

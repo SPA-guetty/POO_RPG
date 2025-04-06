@@ -23,7 +23,7 @@ export class Animatueur {
         true, // random ennemy
         "debuff", // type
         20, // RAM
-        [new capacity.CapacityEffect("defense", 0.5), new capacity.CapacityEffect("attaque", 0.5)], // statistics
+        [new capacity.CapacityEffect("defense", 0.5), new capacity.CapacityEffect("attack", 0.5)], // statistics
     );
     capacity2 = new capacity.Capacity(
         "Quick-dash", // name

@@ -15,6 +15,7 @@ export class Game {
     async Handler() {
         for (let i = 0; i < this.ympeldown.Etages.length; i++) {
             await this.ympeldown.Etages[i].Start(this.allies.GetTeam())
+            this.allies.Heal(10);
         };
     }
 }
