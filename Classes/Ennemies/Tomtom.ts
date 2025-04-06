@@ -1,5 +1,5 @@
 import { Ennemy } from "./Ennemies.ts";
-import * as capacity from "../../Main/Capacity.ts";
+import * as capacity from "../../Main/Capacities/Capacity.ts";
 
 export class Tomtom extends Ennemy {
     constructor() {

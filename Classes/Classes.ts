@@ -5,7 +5,7 @@ import { Cyberserker } from "../Classes/Allies/Cyberserker.ts";
 import { Nainformaticien } from "../Classes/Allies/Nainformaticien.ts";
 import { Animatueur } from "../Classes/Allies/Animatueur.ts";
 
-import * as capacity from '../Main/Capacity.ts';
+import * as capacity from '../Main/Capacities/Capacity.ts';
 
 export class classelist {
     animatueur = new Animatueur();

@@ -1,11 +1,11 @@
-import { character } from "../Classes/Classes.ts";
-import { Ennemy } from "../Classes/Ennemies/Ennemies.ts";
-import { Refresh } from "../Misc/Refresh.ts";
-import { Capacity } from "./Capacity.ts";
-import { PromptChecking } from "../Misc/PromptChecking.ts";
-import { Wait } from "../Misc/Wait.ts";
-import { Randomnumber } from "../Misc/Randomizer.ts";
-import { UseCapacity } from "./Capacityusing.ts";
+import { character } from "../../Classes/Classes.ts";
+import { Ennemy } from "../../Classes/Ennemies/Ennemies.ts";
+import { Refresh } from "../../Misc/Refresh.ts";
+import { Capacity } from "../Capacities/Capacity.ts";
+import { PromptChecking } from "../../Misc/PromptChecking.ts";
+import { Wait } from "../../Misc/Wait.ts";
+import { Randomnumber } from "../../Misc/Randomizer.ts";
+import { UseCapacity } from "../Capacities/Capacityusing.ts";
 
 export class Fight {
     private allies: Array<character>;
@@ -147,7 +147,6 @@ export class Fight {
         this.turn++;
 
         for (let i = 0; i < this.allies.length; i++) {
-            console.warn("Je suis passé par ici", i)
             let validation = false;
             while (!validation) {
                 this.PrintUI();

@@ -1,4 +1,4 @@
-import * as capacity from "../../Main/Capacity.ts";
+import * as capacity from "../../Main/Capacities/Capacity.ts";
 
 export class Archicube {
     classname = "archicube";

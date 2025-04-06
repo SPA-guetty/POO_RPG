@@ -7,15 +7,16 @@
     effect: Array<CapacityEffect>;
 */
 
-import { character } from "../Classes/Classes.ts";
-import { Ennemy } from "../Classes/Ennemies/Ennemies.ts";
+import { character } from "../../Classes/Classes.ts";
+import { Ennemy } from "../../Classes/Ennemies/Ennemies.ts";
 import { CapacityEffect } from "./Capacity.ts";
 import { Capacity } from "./Capacity.ts";
 
-import { Randomnumber } from "../Misc/Randomizer.ts";
+import { Randomnumber } from "../../Misc/Randomizer.ts";
+import { Boss } from "../../Classes/Bosses.ts";
 
 export class UseCapacity {
-    static Use(allies: Array<character | Ennemy | null>, ennemies: Array<character | Ennemy | null>, attacker: number, target: number, capacity: Capacity) {
+    static Use(allies: Array<character | Ennemy | Boss | null>, ennemies: Array<character | Ennemy | Boss | null>, attacker: number, target: number, capacity: Capacity) {
         console.log("Capacity is used: " + capacity.name)
         if (capacity.type.includes("code") || capacity.type.includes("physical") || capacity.type.includes("heal")) {
             for (let i = 0; i < capacity.effect.length; i++) {
@@ -59,7 +60,7 @@ export class UseCapacity {
         }
     }
 
-    static CountTeam(team: Array<character | Ennemy | null>): number {
+    static CountTeam(team: Array<character | Ennemy | Boss | null>): number {
         let result =0;
         for (let char = 0; char < 3; char++) {
             if (team[char] !== null && team[char]!.battery > 0) {
@@ -69,7 +70,7 @@ export class UseCapacity {
         return result;
     }
 
-    static Attack(attacker: character | Ennemy, target: character | Ennemy, capacity: Capacity, effect: CapacityEffect) {
+    static Attack(attacker: character | Ennemy | Boss, target: character | Ennemy | Boss, capacity: Capacity, effect: CapacityEffect) {
         let damage = effect.intensity;
         if (capacity.type.includes("code")) {
             let targetdefense = target.antivirus/1.5;
@@ -92,7 +93,7 @@ export class UseCapacity {
         }
     }  
 
-    static Steal(allies: Array<character | Ennemy | null>, ennemies: Array<character | Ennemy | null>, attacker: character | Ennemy | null) {
+    static Steal(allies: Array<character | Ennemy | Boss | null>, ennemies: Array<character | Ennemy | Boss | null>, attacker: character | Ennemy | null) {
         let pv = 0;
         for (let ennemy = 0; ennemy < 3; ennemy ++) {
             if (ennemy !== null) {
@@ -116,7 +117,7 @@ export class UseCapacity {
         }
     }
 
-    static Buff(targets: Array<character | Ennemy | null>, effect: CapacityEffect) {
+    static Buff(targets: Array<character | Ennemy | Boss | null>, effect: CapacityEffect) {
         for (let target = 0; target < 3; target++) {
             if (targets[target] !== null) {
                 if (effect.effect === "attack") {

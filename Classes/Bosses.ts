@@ -1,5 +1,5 @@
 import * as Items from "../Items/Items.ts";
-import * as capacity from '../Main/Capacity.ts';
+import * as capacity from '../Main/Capacities/Capacity.ts';
 
 export class Boss {
     public classname: string;
@@ -12,7 +12,7 @@ export class Boss {
     public battery: number;
     public maxbattery: number;
 
-    public exp: number;
+    public expreward: number;
     public drop: Items.Item | null; 
 
     public capacity1: capacity.Capacity;
@@ -28,7 +28,7 @@ export class Boss {
         this.battery = battery;
         this.maxbattery = maxbattery;
 
-        this.exp = exp;
+        this.expreward = exp;
         this.drop = drop;
 
         this.capacity1 = capacity1;
@@ -200,7 +200,7 @@ export class Bidoof extends Boss {
     }
 }
 
-class Romeo extends Boss {
+export class Romeo extends Boss {
     constructor() {
         super(
             "Romeo", //classname
@@ -241,7 +241,7 @@ class Romeo extends Boss {
     }
 }
 
-class Juliette extends Boss {
+export class Juliette extends Boss {
     constructor() {
         super(
             "Juliette", //classname
@@ -279,16 +279,6 @@ class Juliette extends Boss {
                 [new capacity.CapacityEffect("defense", -0.6)], // statistics
             ),
         )
-    }
-}
-
-export class RomeoJuliette {
-    romeo: Romeo;
-    juliette: Juliette;
-
-    constructor() {
-        this.romeo = new Romeo();
-        this.juliette = new Juliette();
     }
 }
 
