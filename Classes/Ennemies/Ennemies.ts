@@ -1,6 +1,6 @@
 import * as capacity from '../../Main/Capacity.ts';
 
-export class Ennemi {
+export class Ennemy {
     classname: string;
     ui: Array<string>;
 

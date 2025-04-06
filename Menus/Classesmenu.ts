@@ -39,14 +39,6 @@ export class Classesmenu {
         }
     }
 
-    StrNulltoStr(strnull: string | null): string {
-        if (strnull === null) {
-            return "";
-        } else {
-            return strnull;
-        }
-    }
-
     CharactersConditions(choices: string): boolean {
         if (choices.length !== 3) {
             return false;
@@ -65,11 +57,10 @@ export class Classesmenu {
     Load(): void {
         this.Affiche();
         let choices: string | null = "000";
-        choices = this.StrNulltoStr(prompt("Veuillez choisir vos 3 personnages: "));
-        while (!this.CharactersConditions(choices)) {
-            choices = this.StrNulltoStr(prompt("Veuillez choisir 3 personnages différents: "));
+        choices = prompt("Veuillez choisir vos 3 personnages: ");
+        while (choices === null || !this.CharactersConditions(choices)) {
+            choices = prompt("Veuillez choisir 3 personnages différents: ");
         }
-        const game = new Game()
-        game.Start(choices)
+        new Game(choices);
     }
 };

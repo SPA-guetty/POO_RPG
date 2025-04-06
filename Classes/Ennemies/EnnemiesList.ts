@@ -2,19 +2,19 @@ import { Marijuana } from './Marijuana.ts';
 import { Remy } from './Remy.ts';
 import { Tomtom } from './Tomtom.ts';
 
-import { Ennemi } from './Ennemies.ts';
+import { Ennemy } from './Ennemies.ts';
 import * as bosses from '../Bosses.ts';
 
 import { Randomnumber } from '../../Misc/Randomizer.ts';
 
 export class EnnemiesList {
-    private ennemies: Array<Ennemi> = [
+    private ennemies: Array<Ennemy> = [
         new Marijuana(),
         new Remy(),
         new Tomtom(),
     ];
 
-    getEnnemies(id: number): Array<Ennemi> | bosses.Boss | bosses.RomeoJuliette {
+    getEnnemies(id: number): Array<Ennemy> | bosses.Boss | bosses.RomeoJuliette {
         if (id >= 0) {
             return this.getEnnemiList(id);
         } else {
@@ -22,12 +22,12 @@ export class EnnemiesList {
         }
     }
 
-    getEnnemiList(id: number): Array<Ennemi> {
-        const list: Array<Ennemi> = [];
+    getEnnemiList(id: number): Array<Ennemy> {
+        const list: Array<Ennemy> = [];
 
         for (let i = 0; i < id; i++) {
-            const ennemi = new Randomnumber().Random(0,2);
-            list.push(this.ennemies[ennemi]);
+            const Ennemy = new Randomnumber().Random(0,2);
+            list.push(this.ennemies[Ennemy]);
         }
 
         return list;

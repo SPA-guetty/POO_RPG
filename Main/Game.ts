@@ -3,13 +3,19 @@ import { Team } from "./Team.ts";
 
 export class Game {
     private ympeldown: Ympeldown;
-
-    constructor() {
-        this.ympeldown = new Ympeldown();
-    }
+    private allies: Team;
     
-    Start(choices: string): void {
-        const allies = new Team(choices);
-        allies.GetTeam();
+    constructor(choices: string) {
+        this.ympeldown = new Ympeldown();
+
+        this.allies = new Team(choices);
+        this.allies.GetTeam();
+        this.Handler();
+    }
+
+    Handler(): void {
+        for (let i = 0; i < this.ympeldown.Etages.length; i++) {
+            this.ympeldown.Etages[i].Start(this.allies.GetTeam())
+        };
     }
 }

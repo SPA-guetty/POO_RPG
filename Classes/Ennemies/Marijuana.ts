@@ -1,7 +1,7 @@
-import { Ennemi } from "./Ennemies.ts";
+import { Ennemy } from "./Ennemies.ts";
 import * as capacity from "../../Main/Capacity.ts";
 
-export class Marijuana extends Ennemi {
+export class Marijuana extends Ennemy {
     constructor() {
         super(
             "Marijuana", //classname

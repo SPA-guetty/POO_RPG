@@ -1,7 +1,7 @@
-import { Ennemi } from "./Ennemies.ts";
+import { Ennemy } from "./Ennemies.ts";
 import * as capacity from "../../Main/Capacity.ts";
 
-export class Remy extends Ennemi {
+export class Remy extends Ennemy {
     constructor() {
         super(
             "Remy (best of)", //classname
@@ -19,23 +19,23 @@ export class Remy extends Ennemi {
             150, //expreward
 
             new capacity.Capacity(
-                "Absence", // name
-                "Efface une partie de l'existence de quelqu\'un", // description
+                "Charge", // name
+                "Fonce sur son adversaire", // description
                 1, // number of targets
                 true, // random ennemy
-                "code", // type
+                "physical", // type
                 0, // RAM
-                [new capacity.CapacityEffect("batterie", -15)], // statistics
+                [new capacity.CapacityEffect("batterie", -10)], // statistics
             ),
 
             new capacity.Capacity(
-                "Absence générale", // name
-                "Efface une partie de l'existence de chacun des alliés", // description
-                3, // number of targets
+                "git push --force", // name
+                "Fonce et ignore la défense adverse, endommage son allié aléatoirement", // description
+                1, // number of targets
                 true, // random ennemy
-                "code", // type
+                "physical, heal", // type
                 0, // RAM
-                [new capacity.CapacityEffect("batterie", -10)], // statistics
+                [new capacity.CapacityEffect("batterie", -20), new capacity.CapacityEffect("battery", -10)], // statistics
             ),
         )
     }

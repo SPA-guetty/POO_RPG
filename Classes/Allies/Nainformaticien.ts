@@ -21,7 +21,7 @@ export class Nainformaticien {
         "Redonne un peu de RAM à un allié au choix, au dépit de la sienne", // description
         1, // number of targets
         false, // random ennemy
-        "code", // type
+        "buff", // type
         5, // RAM
         [new capacity.CapacityEffect("RAM", 8)], // statistics
     );

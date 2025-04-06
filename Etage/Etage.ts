@@ -1,14 +1,17 @@
 import { Refresh } from "../Misc/Refresh.ts";
 
-import { Ennemi } from "../Classes/Ennemies/Ennemies.ts";
+import { Ennemy } from "../Classes/Ennemies/Ennemies.ts";
 import { EnnemiesList } from "../Classes/Ennemies/EnnemiesList.ts";
+import { character } from "../Classes/Classes.ts";
+
+import { Fight } from "../Main/Fight.ts";
 
 export class Etage {
 
     private nb = 0;
-    private ennemi1: Ennemi | null = null;
-    private ennemi2: Ennemi | null = null;
-    private ennemi3: Ennemi | null = null;
+    private ennemi1: Ennemy | null = null;
+    private ennemi2: Ennemy | null = null;
+    private ennemi3: Ennemy | null = null;
 
     public UI = [
         "#######################################################################################################################",
@@ -63,5 +66,9 @@ export class Etage {
         } else {
             this.ennemi2 = ennemilist[0];
         };
+    }
+
+    Start(allies: Array<character>): void {
+        new Fight(allies, [this.ennemi1, this.ennemi2, this.ennemi3], this.UI).Turn();
     }
 }
