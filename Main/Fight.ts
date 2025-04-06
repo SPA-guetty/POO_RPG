@@ -4,6 +4,8 @@ import { Refresh } from "../Misc/Refresh.ts";
 import { Capacity } from "./Capacity.ts";
 import { PromptChecking } from "../Misc/PromptChecking.ts";
 import { Wait } from "../Misc/Wait.ts";
+import { Randomnumber } from "../Misc/Randomizer.ts";
+import { UseCapacity } from "./Capacityusing.ts";
 
 export class Fight {
     private allies: Array<character>;
@@ -69,6 +71,16 @@ export class Fight {
         return count;
     }
 
+    CountAllies(): number {
+        let count = 0;
+        for (let i = 0; i < this.allies.length; i++) {
+            if (this.allies[i].battery > 0) {
+                count++;
+            }
+        }
+        return count;
+    }
+
     IsFinished(): string {
         let alliesalive = false;
         let ennemiesalive = false;
@@ -94,14 +106,38 @@ export class Fight {
             return "won";
         }
     }
+
+    EnnemyTurn(ennemy: number) {
+        let capacity = this.ennemies[ennemy]!.capacity1;
+        if (this.ennemies[ennemy]!.capacity2 !== null) {
+            if (Randomnumber.Random(0, 10) <= 3) {
+                capacity = this.ennemies[ennemy]?.capacity2!;
+            }
+        }
+
+        let nb = -1;
+        if (capacity.numberoftargets === 1) {
+            nb = Randomnumber.Random(0, this.CountAllies()-1);
+
+            let count = 0;
+            for (let i = 0; i < 3; i++) {
+                if (this.allies[i].battery > 0) {
+                    count++
+                    if (nb == count) {
+                        UseCapacity.Use(this.ennemies, this.allies, ennemy, i, capacity)
+                    }
+                }
+            }
+        } else {
+            UseCapacity.Use(this.ennemies, this.allies, ennemy, -1, capacity)
+        }
+    }
         
     async Turn() {
         this.turn++;
         console.log("Tour " + this.turn);
         this.PrintUI();
 
-        const actions: Array<[Capacity | null, Ennemy | character]> = [];
-        
         for (let i = 0; i < this.allies.length; i++) {
             console.warn("Je suis passé par ici", i)
             let validation = false;
@@ -134,15 +170,19 @@ export class Fight {
                             cap = this.allies[i].capacity2;
                         }
 
-                        let choice3
+                        let choice3: string;
 
-                        if (cap.type === "buff") {
+                        if (cap.type === "buff" || cap.type.includes("heal")) {
                             this.PrintAllies();
-                            choice3 = prompt("Sur quel allié voulez-vous l'utiliser?");
-                            while (!(new PromptChecking().Check(choice3))) {
-                                this.PrintAllies();
-                                console.log("Veuillez rentrer un nombre");
+                            if (cap.numberoftargets === 1) {
                                 choice3 = prompt("Sur quel allié voulez-vous l'utiliser?");
+                                while (!(new PromptChecking().Check(choice3))) {
+                                    this.PrintAllies();
+                                    console.log("Veuillez rentrer un nombre");
+                                    choice3 = prompt("Sur quel allié voulez-vous l'utiliser?");
+                                }
+                            } else {
+                                choice3 = "-1"
                             }
                         } else {
                             this.PrintEnnemies();
@@ -182,7 +222,10 @@ export class Fight {
                     }
                 } else if (choice === "2") {
                     validation = true;
-                    actions.push([null, this.allies[i]]);
+                    this.allies[i].battery+=10;
+                    if (this.allies[i].battery > this.allies[i].maxbattery) {
+                        this.allies[i].battery = this.allies[i].maxbattery
+                    }
                 } else {
                     console.log("Vous n'avez pas d'objets");
                 }
@@ -190,12 +233,11 @@ export class Fight {
         }
 
         for (let i = 0; i < 3; i++) {
-            if (this.ennemies[i]) {
+            if (this.ennemies[i] !== null) {
                 console.log(`C'est au tour de ${this.ennemies[i]?.classname}`);
                 await Wait.Time(2000);
-                console.log("1")
+                this.EnnemyTurn(i)
             }
-            console.log("2")
         }
 
         const status = this.IsFinished();
