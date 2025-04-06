@@ -48,7 +48,7 @@ export class Titi extends Boss {
             6, //attack
             5, //defense
             4, //processors
-            40, //antivirus
+            15, //antivirus
             200, //battery
             200, //maxbattery
             1000, //exp
@@ -87,7 +87,7 @@ export class Laurent extends Boss {
                 "  大   ",
             ],
             5, //attack
-            40, //defense
+            10, //defense
             7, //processors
             4, //antivirus
             320, //battery
@@ -128,9 +128,9 @@ export class Pascalou extends Boss {
                 "  防   ",
             ],
             0, //attack
-            12, //defense
+            6, //defense
             30, //processors
-            40, //antivirus
+            11, //antivirus
             250, //battery
             250, //maxbattery
             3500, //exp
@@ -168,9 +168,9 @@ export class Bidoof extends Boss {
                 "  齿   ",
                 "  共   ",
             ],
-            30, //attack
+            10, //attack
             10, //defense
-            30, //processors
+            10, //processors
             4, //antivirus
             500, //battery
             500, //maxbattery
@@ -209,9 +209,9 @@ export class Romeo extends Boss {
                 "  络   ",
                 "  情   ",
             ],
-            20, //attack
+            11, //attack
             20, //defense
-            20, //processors
+            11, //processors
             20, //antivirus
             1000, //battery
             1000, //maxbattery
@@ -251,12 +251,12 @@ export class Juliette extends Boss {
                 "  情   ",
             ],
             10, //attack
-            8, //defense
-            0, //processors
+            6, //defense
+            6, //processors
             7, //antivirus
             250, //battery
             250, //maxbattery
-            4000, //exp
+            2500, //exp
             null, //drop
 
             new capacity.Capacity(
@@ -291,10 +291,10 @@ export class Juju extends Boss {
                 "  知   ",
                 "  识   ",
             ],
-            30, //attack
-            50, //defense
-            40, //processors
-            50, //antivirus
+            12, //attack
+            10, //defense
+            13, //processors
+            16, //antivirus
             500, //battery
             500, //maxbattery
             10000, //expreward
@@ -333,11 +333,11 @@ export class AnilMagellanDende extends Boss {
                 "  领导者",
                 "  秃  秃",
             ],
-            40, //attack
-            40, //defense
-            10, //processors
-            40, //antivirus
-            1000, //battery
+            16, //attack
+            18, //defense
+            13, //processors
+            15, //antivirus
+            550, //battery
             1000, //maxbattery
             10000, //exp
             new Items.ExitKeys(), //drop

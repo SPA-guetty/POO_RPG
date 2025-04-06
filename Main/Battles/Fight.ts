@@ -23,51 +23,53 @@ export class Fight {
         this.turn = 0;
     }
     
-    PrintUI(): void {
-        new Refresh();
-        console.log("Tour " + this.turn);
-        for (let i = 0; i < this.UI.length; i++) {
-            console.log(this.UI[i]);
+    PrintUI(ui: Array<string>): void {
+        for (let i = 0; i < ui.length; i++) {
+            console.log(ui[i]);
         }  
     }
 
     PrintCapacities(character: character): void {
-        this.PrintUI();
         console.log("1: " + character.capacity1.name + " : " + character.capacity1.description);
         console.log("2: " + character.capacity2.name + " : " + character.capacity2.description);
         console.log("Autre: Annuler")
     }
 
     PrintAllies(choice: boolean = true): void {
-        if (choice) {
-            this.PrintUI()
-        } else {
+        if (!choice) {
             console.log("Votre équipe")
         };
         console.log(`1: ${this.allies[0]?.classname} : (Batterie: ${this.allies[0]?.battery}/${this.allies[0]?.maxbattery})`);
+        this.PrintUI(this.allies[0].ui)
         console.log(`2: ${this.allies[1]?.classname} : (Batterie: ${this.allies[1]?.battery}/${this.allies[1]?.maxbattery})`);
+        this.PrintUI(this.allies[1].ui)
         console.log(`3: ${this.allies[2]?.classname} : (Batterie: ${this.allies[2]?.battery}/${this.allies[2]?.maxbattery})`);
-        if (choice) {console.log("Autre: Annuler");};
+        this.PrintUI(this.allies[2].ui)
+        if (choice) {console.log("Autre: Annuler") } else {console.log("\n\n") };
     }
 
     PrintEnnemies(choice: boolean = true): void {
         if (choice) {
-            this.PrintUI()
-        } else {
             console.log("Équipe adverse")
         };
         const nb = this.CountEnnemies();
         if (nb === 1) {
             console.log(`1: ${this.ennemies[1]?.classname} : (Batterie: ${this.ennemies[1]?.battery}/${this.ennemies[1]?.maxbattery})`);
+            this.PrintUI(this.ennemies[1]!.ui)
         } else if (nb === 2) {
             console.log(`1: ${this.ennemies[0]?.classname} : (Batterie: ${this.ennemies[0]?.battery}/${this.ennemies[0]?.maxbattery})`);
+            this.PrintUI(this.ennemies[0]!.ui)
             console.log(`2: ${this.ennemies[2]?.classname} : (Batterie: ${this.ennemies[2]?.battery}/${this.ennemies[2]?.maxbattery})`);
+            this.PrintUI(this.ennemies[2]!.ui)
         } else {
             console.log(`1: ${this.ennemies[0]?.classname} : (Batterie: ${this.ennemies[0]?.battery}/${this.ennemies[0]?.maxbattery})`);
+            this.PrintUI(this.ennemies[0]!.ui)
             console.log(`2: ${this.ennemies[1]?.classname} : (Batterie: ${this.ennemies[1]?.battery}/${this.ennemies[1]?.maxbattery})`);
+            this.PrintUI(this.ennemies[1]!.ui)
             console.log(`3: ${this.ennemies[2]?.classname} : (Batterie: ${this.ennemies[2]?.battery}/${this.ennemies[2]?.maxbattery})`);
+            this.PrintUI(this.ennemies[2]!.ui)
         }
-        if (choice) {console.log("Autre: Annuler");};
+        if (choice) {console.log("Autre: Annuler")} else {console.log("\n\n") };
     }
 
     CountEnnemies(): number {
@@ -144,18 +146,17 @@ export class Fight {
     }
         
     async Turn() {
+        new Refresh();
         this.turn++;
 
         for (let i = 0; i < this.allies.length; i++) {
             let validation = false;
             while (!validation) {
-                this.PrintUI();
                 this.PrintAllies(false);
                 this.PrintEnnemies(false);
                 let choice = prompt(`Que voulez-vous faire avec ${this.allies[i].classname}? \n 1: Utiliser une compétence \n 2: Se reposer \n 3: Utiliser un objet \nVotre choix:`);
 
                 while (!(new PromptChecking().Check(choice) && 0 < parseInt(choice!) && parseInt(choice!) < 4)) {
-                    this.PrintUI();
                     console.log("Veuillez rentrer une valeur proposée");
                     choice = prompt(`Que voulez-vous faire avec ${this.allies[i].classname}? \n 1: Utiliser une compétence \n 2: Se reposer \n 3: Utiliser un objet \nVotre choix:`);;
                 }
@@ -246,6 +247,7 @@ export class Fight {
                 }
             }
         }
+        if (this.CountEnnemies() === 0) {return}
 
         for (let i = 0; i < 3; i++) {
             if (this.ennemies[i] !== null) {
