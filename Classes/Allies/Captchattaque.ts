@@ -18,7 +18,7 @@ export class Captchattaque {
 
     capacity1 = new capacity.Capacity(
         "Malware", // name
-        "Vole des pv à un nombre aléatoire d'ennemis pour les redistribuer équitablement à toute l'équipe alliée vivante", // description
+        "Vole des pv alétoires à un nombre aléatoire d'ennemis pour les redistribuer équitablement à toute l'équipe alliée vivante", // description
         null, // number of targets
         true, // random ennemy
         "steal", // type
@@ -30,9 +30,9 @@ export class Captchattaque {
         "Attaque un nombre aléatoire de ses adversaires, baissant leur défense et infligeant des dégâts", // description
         null, // number of targets
         true, // random ennemy
-        "physical, defense", // type
+        "physical, debuff", // type
         3, // RAM
-        [new capacity.CapacityEffect("battery", -10), new capacity.CapacityEffect("defense", -0.5)], // statistics
+        [new capacity.CapacityEffect("battery", -10), new capacity.CapacityEffect("defense", 0.5)], // statistics
     );
     passive = null;
 }

@@ -47,14 +47,6 @@ export class Team {
     }
 
     GetTeam(): Array<character> {
-        console.log("Voici votre équipe: \n\n")
-        for (let i = 0; i < this.characterslist.length; i++) {
-            for (let line = 0; line < this.characterslist[i].ui.length; line++) {
-                console.log(this.characterslist[i].ui[line]);
-            }
-            console.log(this.characterslist[i].classname + "\n")
-        } 
-
         return this.characterslist;
     }
 }

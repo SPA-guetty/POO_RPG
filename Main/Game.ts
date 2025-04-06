@@ -9,13 +9,12 @@ export class Game {
         this.ympeldown = new Ympeldown();
 
         this.allies = new Team(choices);
-        this.allies.GetTeam();
         this.Handler();
     }
 
-    Handler(): void {
+    async Handler() {
         for (let i = 0; i < this.ympeldown.Etages.length; i++) {
-            this.ympeldown.Etages[i].Start(this.allies.GetTeam())
+            await this.ympeldown.Etages[i].Start(this.allies.GetTeam())
         };
     }
 }

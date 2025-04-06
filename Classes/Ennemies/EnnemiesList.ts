@@ -26,7 +26,7 @@ export class EnnemiesList {
         const list: Array<Ennemy> = [];
 
         for (let i = 0; i < id; i++) {
-            const Ennemy = new Randomnumber().Random(0,2);
+            const Ennemy = Randomnumber.Random(0,2);
             list.push(this.ennemies[Ennemy]);
         }
 

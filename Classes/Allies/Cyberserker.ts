@@ -30,7 +30,7 @@ export class Cyberserker {
         "Tente de s'attaquer directement aux adversaires (dégâts lourds répartits sur les adversaires), petite chance d'échouer et de subire des dégâts", // description
         3, // number of targets
         true, // random ennemy
-        "dangerous", // type
+        "physical, dangerous", // type
         8, // RAM
         [new capacity.CapacityEffect("battery", -60)], // statistics
     );

@@ -68,7 +68,7 @@ export class Etage {
         };
     }
 
-    Start(allies: Array<character>): void {
-        new Fight(allies, [this.ennemi1, this.ennemi2, this.ennemi3], this.UI).Turn();
+    async Start(allies: Array<character>) {
+        await new Fight(allies, [this.ennemi1, this.ennemi2, this.ennemi3], this.UI).Turn();
     }
 }

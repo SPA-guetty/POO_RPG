@@ -3,6 +3,7 @@ import { Ennemy } from "../Classes/Ennemies/Ennemies.ts";
 import { Refresh } from "../Misc/Refresh.ts";
 import { Capacity } from "./Capacity.ts";
 import { PromptChecking } from "../Misc/PromptChecking.ts";
+import { Wait } from "../Misc/Wait.ts";
 
 export class Fight {
     private allies: Array<character>;
@@ -55,7 +56,7 @@ export class Fight {
             console.log(`2: ${this.ennemies[1]?.classname} : (Batterie: ${this.ennemies[1]?.battery}/${this.ennemies[1]?.maxbattery})`);
             console.log(`3: ${this.ennemies[2]?.classname} : (Batterie: ${this.ennemies[2]?.battery}/${this.ennemies[2]?.maxbattery})`);
         }
-        console.log(nb+1 + "Autre: Annuler");
+        console.log("Autre: Annuler");
     }
 
     CountEnnemies(): number {
@@ -93,8 +94,8 @@ export class Fight {
             return "won";
         }
     }
-
-    Turn(): void {
+        
+    async Turn() {
         this.turn++;
         console.log("Tour " + this.turn);
         this.PrintUI();
@@ -102,6 +103,7 @@ export class Fight {
         const actions: Array<[Capacity | null, Ennemy | character]> = [];
         
         for (let i = 0; i < this.allies.length; i++) {
+            console.warn("Je suis passé par ici", i)
             let validation = false;
             while (!validation) {
                 this.PrintUI();
@@ -187,21 +189,23 @@ export class Fight {
             }
         }
 
-        for (let i = 0; i < this.ennemies.length; i++) {
+        for (let i = 0; i < 3; i++) {
             if (this.ennemies[i]) {
                 console.log(`C'est au tour de ${this.ennemies[i]?.classname}`);
+                await Wait.Time(2000);
+                console.log("1")
             }
+            console.log("2")
         }
 
         const status = this.IsFinished();
         if (status === "continue") {
-            this.Turn();
+            console.log("continue")
+            await this.Turn();
         } else if (status === "lost") {
             console.log("Vous avez perdu la partie");
-        }
-        else if (status === "won") {
+        } else if (status === "won") {
             console.log("Vous avez gagné la partie");
         }
-        return;
     }
 }

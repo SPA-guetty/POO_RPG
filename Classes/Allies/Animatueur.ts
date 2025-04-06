@@ -21,9 +21,9 @@ export class Animatueur {
         "Anime une illusion pour les adversaires pour les déstabiliser: baisse leur attaque + défense de 50% pendant 2 tours", // description
         3, // number of targets
         true, // random ennemy
-        "code", // type
+        "debuff", // type
         20, // RAM
-        [new capacity.CapacityEffect("defense", -0.5), new capacity.CapacityEffect("attaque", -0.5)], // statistics
+        [new capacity.CapacityEffect("defense", 0.5), new capacity.CapacityEffect("attaque", 0.5)], // statistics
     );
     capacity2 = new capacity.Capacity(
         "Quick-dash", // name

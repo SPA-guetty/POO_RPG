@@ -33,7 +33,7 @@ export class Remy extends Ennemy {
                 "Fonce et ignore la défense adverse, endommage son allié aléatoirement", // description
                 1, // number of targets
                 true, // random ennemy
-                "physical, heal", // type
+                "physical, dangerous", // type
                 0, // RAM
                 [new capacity.CapacityEffect("batterie", -20), new capacity.CapacityEffect("battery", -10)], // statistics
             ),

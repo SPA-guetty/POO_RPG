@@ -17,13 +17,13 @@ export class Nainformaticien {
     ram = 16;
 
     capacity1 = new capacity.Capacity(
-        "RAM-Refresh", // name
-        "Redonne un peu de RAM à un allié au choix, au dépit de la sienne", // description
+        "Battery sharing", // name
+        "Donne un peu de sa batterie à un allié au choix", // description
         1, // number of targets
         false, // random ennemy
-        "buff", // type
+        "heal, dangerous", // type
         5, // RAM
-        [new capacity.CapacityEffect("RAM", 8)], // statistics
+        [new capacity.CapacityEffect("battery", 10)], // statistics
     );
     capacity2 = new capacity.Capacity(
         "Naino-mare", // name

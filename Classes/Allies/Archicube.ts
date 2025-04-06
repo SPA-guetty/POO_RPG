@@ -31,7 +31,7 @@ export class Archicube {
         true, // random ennemy
         "buff", // type
         2, // RAM
-        [new capacity.CapacityEffect("protection", 999 )], // statistics
+        [new capacity.CapacityEffect("defense", 999 )], // statistics
     );
 
     passive = new capacity.Passive(

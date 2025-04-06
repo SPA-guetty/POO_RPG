@@ -26,12 +26,12 @@ export class Webscammer {
     );
     capacity2 = new capacity.Capacity(
         "Psycho-trap", // name
-        "Crée des faux sites qui piègent les ennemis et baisse légèrement chacune de leurs statistiques", // description
+        "Crée des faux sites qui piègent les ennemis et baisse leurs statistiques", // description
         3, // number of targets
         true, // random ennemy
         "debuff", // type
         2, // RAM
-        [new capacity.CapacityEffect("attaque", -2), new capacity.CapacityEffect("defense", -2), new capacity.CapacityEffect("code", -2), new capacity.CapacityEffect("antivirus", -2)], // statistics
+        [new capacity.CapacityEffect("attaque", 0.9), new capacity.CapacityEffect("defense", 0.9), new capacity.CapacityEffect("code", 0.9), new capacity.CapacityEffect("antivirus", 0.9)], // statistics
     );
 
     passive = new capacity.Passive(
