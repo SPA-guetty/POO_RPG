@@ -173,47 +173,53 @@ export class Fight {
                         let choice3: string;
 
                         if (cap.type === "buff" || cap.type.includes("heal")) {
-                            this.PrintAllies();
                             if (cap.numberoftargets === 1) {
-                                choice3 = prompt("Sur quel allié voulez-vous l'utiliser?");
-                                while (!(new PromptChecking().Check(choice3))) {
+                                this.PrintAllies();
+                                let entry = prompt("Sur quel allié voulez-vous l'utiliser?");
+                                while (!(new PromptChecking().Check(entry))) {
                                     this.PrintAllies();
                                     console.log("Veuillez rentrer un nombre");
-                                    choice3 = prompt("Sur quel allié voulez-vous l'utiliser?");
+                                    entry = prompt("Sur quel allié voulez-vous l'utiliser?");
                                 }
+                                choice3 = entry!;
                             } else {
                                 choice3 = "-1"
                             }
                         } else {
-                            this.PrintEnnemies();
-                            choice3 = prompt("Sur quel ennemi voulez-vous l'utiliser?");
-                            while (!(new PromptChecking().Check(choice3))) {
+                            if (cap.numberoftargets === 1) {
                                 this.PrintEnnemies();
-                                console.log("Veuillez rentrer une valeur valide");
-                                choice3 = prompt("Sur quel ennemi voulez-vous l'utiliser?");
+                                let entry = prompt("Sur quel ennemi voulez-vous l'utiliser?");
+                                while (!(new PromptChecking().Check(entry))) {
+                                    this.PrintEnnemies();
+                                    console.log("Veuillez rentrer une valeur valide");
+                                    entry = prompt("Sur quel ennemi voulez-vous l'utiliser?");
+                                }
+                                choice3 = entry!;
+                            } else {
+                                choice3 = "-1"
                             }
                         }
 
-                        if (cap.type === "buff" && (0 > parseInt(choice3!) || parseInt(choice3!) > 3)) {
+                        if (cap.type === "buff" || cap.type.includes("heal") && (0 > parseInt(choice3!) || parseInt(choice3!) > this.CountAllies())) {
                             validation = false;
-                        } else if (cap.type !== "buff" && (0 > parseInt(choice3!) || parseInt(choice3!) > this.CountEnnemies())) {
+                        } else if (cap.type !== "buff" && !(cap.type.includes("heal")) && (0 > parseInt(choice3!) || parseInt(choice3!) > this.CountEnnemies())) {
                             validation = false;
                         } else {
-                            if (cap.type === "buff") {
-                                actions.push([cap, this.allies[parseInt(choice3!)-1]])
+                            if (cap.numberoftargets !== 1 || cap.type === "buff" || cap.type.includes("heal")) {
+                                UseCapacity.Use(this.allies, this.ennemies, i, parseInt(choice3)!, cap);
                             } else {
-                                let target: Ennemy;
+                                let target: number = 0;
                                 let count: number = 0;
 
                                 for (let j = 0; j < this.ennemies.length; j++) {
                                     if (this.ennemies[j] !== null) {
                                         count++;
                                         if (count === parseInt(choice3!)) {
-                                            target = this.ennemies[j]!;
+                                            target = j;
                                         }
                                     }
                                 }
-                                actions.push([cap, target!]);
+                                UseCapacity.Use(this.allies, this.ennemies, i, target, cap);
                             }
                         }
                         

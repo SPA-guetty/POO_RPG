@@ -11,7 +11,7 @@ export class Tomtom extends Ennemy {
                 "  共   ",
             ],
             2, //attack
-            1, //defense
+            8, //defense
             10, //processors
             10, //antivirus
             50, //battery

@@ -20,7 +20,7 @@ export class Archicube {
         "Redonne 20pv à l'allié de son choix", // description
         1, // number of targets
         false, // random ennemy
-        "buff", // type
+        "heal", // type
         2, // RAM
         [new capacity.CapacityEffect("batterie", 20)], // statistics
     );

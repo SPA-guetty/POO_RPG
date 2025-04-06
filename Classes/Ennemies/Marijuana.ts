@@ -11,11 +11,11 @@ export class Marijuana extends Ennemy {
                 "  共   ",
             ],
             2, //attack
-            1, //defense
+            4, //defense
             10, //processors
-            2, //antivirus
-            100, //battery
-            100, //maxbattery
+            4, //antivirus
+            200, //battery
+            200, //maxbattery
             150, //expreward
 
             new capacity.Capacity(

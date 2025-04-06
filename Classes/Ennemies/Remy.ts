@@ -11,7 +11,7 @@ export class Remy extends Ennemy {
                 "  共   ",
             ],
             2, //attack
-            1, //defense
+            8, //defense
             10, //processors
             2, //antivirus
             100, //battery

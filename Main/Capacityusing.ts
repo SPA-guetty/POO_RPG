@@ -26,7 +26,11 @@ export class UseCapacity {
                             }
                         }
                     } else {
-                        this.Attack(allies[attacker]!, ennemies[target]!, capacity, capacity.effect[i]);
+                        if (capacity.type.includes("heal")) {
+                            this.Attack(allies[attacker]!, allies[target]!, capacity, capacity.effect[i]);
+                        } else {
+                            this.Attack(allies[attacker]!, ennemies[target]!, capacity, capacity.effect[i]);
+                        }
                     }
                 }
             }
@@ -66,10 +70,15 @@ export class UseCapacity {
     static Attack(attacker: character | Ennemy, target: character | Ennemy, capacity: Capacity, effect: CapacityEffect) {
         let damage = effect.intensity;
         if (capacity.type.includes("code")) {
-            damage = damage * attacker.processors / (target.processors/2);
+            let targetdefense = target.antivirus/1.5;
+            if (targetdefense < 1) {targetdefense = 1}
+            damage = damage * (attacker.processors/2) / targetdefense;
         } else if (!capacity.type.includes("buff")) {
-            damage = damage * attacker.attack / (target.attack/2);
+            let targetdefense = target.defense/1.5;
+            if (targetdefense < 1) {targetdefense = 1}
+            damage = damage * attacker.attack / targetdefense;
         }
+        console.log("Damage:", damage)
         target.battery += damage;
 
         if (capacity.type.includes("dangerous")) {
