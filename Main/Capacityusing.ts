@@ -116,14 +116,16 @@ export class UseCapacity {
 
     static Buff(targets: Array<character | Ennemy | null>, effect: CapacityEffect) {
         for (let target = 0; target < 3; target++) {
-            if (effect.effect === "attaque") {
-                targets[target]!.attack = targets[target]!.attack * effect.intensity;
-            } else if (effect.effect === "defense") {
-                targets[target]!.defense = targets[target]!.defense * effect.intensity;
-            } else if (effect.effect === "code") {
-                targets[target]!.processors = targets[target]!.processors * effect.intensity;
-            } else if (effect.effect === "antivirus") {
-                   targets[target]!.antivirus = targets[target]!.antivirus * effect.intensity;
+            if (targets[target] !== null) {
+                if (effect.effect === "attaque") {
+                    targets[target]!.attack = targets[target]!.attack * effect.intensity;
+                } else if (effect.effect === "defense") {
+                    targets[target]!.defense = targets[target]!.defense * effect.intensity;
+                } else if (effect.effect === "code") {
+                    targets[target]!.processors = targets[target]!.processors * effect.intensity;
+                } else if (effect.effect === "antivirus") {
+                    targets[target]!.antivirus = targets[target]!.antivirus * effect.intensity;
+                }
             }
         }
     }

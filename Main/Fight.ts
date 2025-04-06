@@ -25,6 +25,7 @@ export class Fight {
     
     PrintUI(): void {
         new Refresh();
+        console.log("Tour " + this.turn);
         for (let i = 0; i < this.UI.length; i++) {
             console.log(this.UI[i]);
         }  
@@ -37,16 +38,24 @@ export class Fight {
         console.log("Autre: Annuler")
     }
 
-    PrintAllies(): void {
-        this.PrintUI();
+    PrintAllies(choice: boolean = true): void {
+        if (choice) {
+            this.PrintUI()
+        } else {
+            console.log("Votre équipe")
+        };
         console.log(`1: ${this.allies[0]?.classname} : (Batterie: ${this.allies[0]?.battery}/${this.allies[0]?.maxbattery})`);
         console.log(`2: ${this.allies[1]?.classname} : (Batterie: ${this.allies[1]?.battery}/${this.allies[1]?.maxbattery})`);
         console.log(`3: ${this.allies[2]?.classname} : (Batterie: ${this.allies[2]?.battery}/${this.allies[2]?.maxbattery})`);
-        console.log("Autre: Annuler");
+        if (choice) {console.log("Autre: Annuler");};
     }
 
-    PrintEnnemies(): void {
-        this.PrintUI();
+    PrintEnnemies(choice: boolean = true): void {
+        if (choice) {
+            this.PrintUI()
+        } else {
+            console.log("Équipe adverse")
+        };
         const nb = this.CountEnnemies();
         if (nb === 1) {
             console.log(`1: ${this.ennemies[1]?.classname} : (Batterie: ${this.ennemies[1]?.battery}/${this.ennemies[1]?.maxbattery})`);
@@ -58,7 +67,7 @@ export class Fight {
             console.log(`2: ${this.ennemies[1]?.classname} : (Batterie: ${this.ennemies[1]?.battery}/${this.ennemies[1]?.maxbattery})`);
             console.log(`3: ${this.ennemies[2]?.classname} : (Batterie: ${this.ennemies[2]?.battery}/${this.ennemies[2]?.maxbattery})`);
         }
-        console.log("Autre: Annuler");
+        if (choice) {console.log("Autre: Annuler");};
     }
 
     CountEnnemies(): number {
@@ -135,14 +144,14 @@ export class Fight {
         
     async Turn() {
         this.turn++;
-        console.log("Tour " + this.turn);
-        this.PrintUI();
 
         for (let i = 0; i < this.allies.length; i++) {
             console.warn("Je suis passé par ici", i)
             let validation = false;
             while (!validation) {
                 this.PrintUI();
+                this.PrintAllies(false);
+                this.PrintEnnemies(false);
                 let choice = prompt(`Que voulez-vous faire avec ${this.allies[i].classname}? \n 1: Utiliser une compétence \n 2: Se reposer \n 3: Utiliser un objet \nVotre choix:`);
 
                 while (!(new PromptChecking().Check(choice) && 0 < parseInt(choice!) && parseInt(choice!) < 4)) {
@@ -200,9 +209,9 @@ export class Fight {
                             }
                         }
 
-                        if (cap.type === "buff" || cap.type.includes("heal") && (0 > parseInt(choice3!) || parseInt(choice3!) > this.CountAllies())) {
+                        if (cap.type === "buff" || cap.type.includes("heal") && (-1 > parseInt(choice3!) || parseInt(choice3!) > this.CountAllies())) {
                             validation = false;
-                        } else if (cap.type !== "buff" && !(cap.type.includes("heal")) && (0 > parseInt(choice3!) || parseInt(choice3!) > this.CountEnnemies())) {
+                        } else if (cap.type !== "buff" && !(cap.type.includes("heal")) && (-1 > parseInt(choice3!) || parseInt(choice3!) > this.CountEnnemies())) {
                             validation = false;
                         } else {
                             if (cap.numberoftargets !== 1 || cap.type === "buff" || cap.type.includes("heal")) {

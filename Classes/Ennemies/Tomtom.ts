@@ -14,8 +14,8 @@ export class Tomtom extends Ennemy {
             8, //defense
             10, //processors
             10, //antivirus
-            50, //battery
-            50, //maxbattery
+            120, //battery
+            120, //maxbattery
             100, //expreward
 
             new capacity.Capacity(
