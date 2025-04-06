@@ -9,8 +9,8 @@ export class Nainformaticien {
     ];
 
     attack = 0;
-    defense = 3;
-    processors = 6;
+    defense = 5;
+    processors = 7;
     antivirus = 10;
     battery = 70;
     maxbattery = 70;

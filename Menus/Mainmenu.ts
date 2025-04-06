@@ -21,9 +21,9 @@ export class Mainmenu {
         "#                                                                                                                     #",
         "#                                                 1: Create new game                                                  #",
         "#                                                                                                                     #",
-        "#                                                   2: Load a game                                                    #",
+        "#                                                      2: Leave                                                       #",
         "#                                                                                                                     #",
-        "#                                                      3: Leave                                                       #",
+        "#                                                                                                                     #",
         "#                                                                                                                     #",
         "#                                                                                                                     #",
         "#                                                                                                                     #",
@@ -58,8 +58,9 @@ export class Mainmenu {
     begin(): void {
         this.affiche();
         let choix: string | null = prompt("Votre choix:");
-        for (;choix !== "1";) {
-            console.log("Veuillez rentrer un nombre valable.");
+        while (choix !== "1" && choix !== "2") {
+            if (choix == "2") {return}
+            console.log("Veuillez rentrer un nombre proposé.");
             choix = prompt("Votre choix:");
         }
         const etage = new Etage();

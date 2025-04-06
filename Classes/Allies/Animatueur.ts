@@ -18,7 +18,7 @@ export class Animatueur {
 
     capacity1 = new capacity.Capacity(
         "Manipulation visuelle", // name
-        "Anime une illusion pour les adversaires pour les déstabiliser: baisse leur attaque + défense de 50% pendant 2 tours", // description
+        "Anime une illusion pour les adversaires pour les déstabiliser: baisse leur attaque + défense de 50%", // description
         3, // number of targets
         true, // random ennemy
         "debuff", // type

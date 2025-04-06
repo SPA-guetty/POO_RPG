@@ -36,9 +36,9 @@ export class Cyberserker {
     );
     passive = new capacity.Passive(
         "Cyber-eye", // name: string;
-        "Fait attention à son trafic réseau: 60% de chance d\'éviter un piratage", // description: string;
+        "Fait attention à son trafic réseau: +1 antivirus", // description: string;
         "code", // type: string;
         "dodge", // effect: string;
-        .6, // intensity: number;
+        1, // intensity: number;
     );
 }
