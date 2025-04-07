@@ -146,6 +146,7 @@ export class BossFight {
     }
         
     async Turn() {
+        new Refresh();
         this.turn++;
 
         for (let i = 0; i < this.allies.length; i++) {
