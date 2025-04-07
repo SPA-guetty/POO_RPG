@@ -30,7 +30,7 @@ export class Remy extends Ennemy {
 
             new capacity.Capacity(
                 "git push --force", // name
-                "Fonce et ignore la défense adverse, endommage son allié aléatoirement", // description
+                "Fonce sur son adversaire, se fait possiblement mal", // description
                 1, // number of targets
                 true, // random ennemy
                 "physical, dangerous", // type

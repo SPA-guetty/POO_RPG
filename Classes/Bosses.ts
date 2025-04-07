@@ -282,6 +282,11 @@ export class Juliette extends Boss {
     }
 }
 
+export class RomeoJuliette {
+    public romeo = new Romeo()
+    public juliette = new Juliette()
+}
+
 export class Juju extends Boss {
     constructor() {
         super(
@@ -344,22 +349,22 @@ export class AnilMagellanDende extends Boss {
 
             new capacity.Capacity(
                 "Campus poison", // name
-                "Attaque 2 alliés: l'un prend des dégâts, l'autre voit son attaque baissée", // description
-                2, // number of targets
-                true, // random ennemy
-                "physical", // type
-                0, // RAM
-                [new capacity.CapacityEffect("battery", -20), new capacity.CapacityEffect("attack", -0.5)], // statistics
-            ),
-
-            new capacity.Capacity(
-                "Projects overflow", // name
-                "Donne des projets épuisants la batterie des alliés", // description
+                "Attaque les alliés: inflige des dégats", // description
                 3, // number of targets
                 true, // random ennemy
                 "physical", // type
                 0, // RAM
-                [new capacity.CapacityEffect("battery", -20)], // statistics
+                [new capacity.CapacityEffect("battery", -10)], // statistics
+            ),
+
+            new capacity.Capacity(
+                "Projects overflow", // name
+                "Donne des projets épuisant la batterie des alliés", // description
+                3, // number of targets
+                true, // random ennemy
+                "physical", // type
+                0, // RAM
+                [new capacity.CapacityEffect("battery", -25)], // statistics
             ),
         )
     }

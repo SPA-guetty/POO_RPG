@@ -27,7 +27,7 @@ export class Nainformaticien {
     );
     capacity2 = new capacity.Capacity(
         "Naino-mare", // name
-        "Sait se faire petit et crée une faille chez ses adversaires en leur infligeant un peu de dégâts chacun pendant 2 tours", // description
+        "Sait se faire petit et crée une faille chez ses adversaires en leur infligeant un peu de dégâts chacun", // description
         3, // number of targets
         true, // random ennemy
         "code", // type
