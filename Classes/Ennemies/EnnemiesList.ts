@@ -8,7 +8,7 @@ import * as bosses from '../Bosses.ts';
 import { Randomnumber } from '../../Misc/Randomizer.ts';
 
 export class EnnemiesList {
-    private ennemies: Array<Ennemy> = [
+    public ennemies: Array<Ennemy> = [
         new Marijuana(),
         new Remy(),
         new Tomtom(),

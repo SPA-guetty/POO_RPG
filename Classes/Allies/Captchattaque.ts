@@ -14,7 +14,7 @@ export class Captchattaque {
     antivirus = 4;
     battery = 80;
     maxbattery = 80;
-    ram = 16;
+    ram = 0;
 
     capacity1 = new capacity.Capacity(
         "Malware", // name

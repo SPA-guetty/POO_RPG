@@ -20,7 +20,7 @@ export class Classesmenu {
         "# Attaque n°1:         Visual          Battery        Hacking         Malware           Code           Hidden         #",
         "#                   Manipulation        share                                           Rift           Socket         #",
         "# Infos:              Affaiblis        Soutient       Attaque         Draine           Attaque        Soutient        #",
-        "# Cible(s):          Adversaires       1  allié       1  ennemi      Adversaires     Adversaires      1  Allié        #",
+        "# Cible(s):          Adversaires       1  allié      1  ennemi      Adversaires      Adversaires      1  Allié        #",
         "#                                                                                                                     #",
         "# Attaque n°2:         Quick            Naino-         Rush           Trojan           Psycho           Mur           #",
         "#                      Dash              Mare                                           trap          Porteur         #",

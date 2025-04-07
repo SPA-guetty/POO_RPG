@@ -13,7 +13,7 @@ export class Webscammer {
     antivirus = 5;
     battery = 80;
     maxbattery = 80;
-    ram = 32;
+    ram = 0;
 
     capacity1 = new capacity.Capacity(
         "Code-Rift", // name

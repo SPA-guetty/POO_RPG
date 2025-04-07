@@ -36,6 +36,88 @@ export class Boss {
     }
 }
 
+export class Laurent extends Boss {
+    constructor() {
+        super(
+            "Laurent", //classname
+            [
+                "  强   ",
+                "  秃   ",
+                "  大   ",
+            ],
+            5, //attack
+            10, //defense
+            7, //processors
+            4, //antivirus
+            150, //battery
+            150, //maxbattery
+            1000, //exp
+            new Items.ShinyLaurentSkull(), //drop
+
+            new capacity.Capacity(
+                "Charge", // name
+                "Fonce sur son adversaire", // description
+                1, // number of targets
+                true, // random ennemy
+                "physical", // type
+                0, // RAM
+                [new capacity.CapacityEffect("battery", -25)], // statistics
+            ),
+
+            new capacity.Capacity(
+                "Crâne luisant", // name
+                "Augmente sa défense", // description
+                3, // number of targets
+                true, // random ennemy
+                "buff", // type
+                0, // RAM
+                [new capacity.CapacityEffect("defense", 1.5)], // statistics
+            ),
+        )
+    }
+}
+
+export class Bidoof extends Boss {
+    constructor() {
+        super(
+            "Bidoof", //classname
+            [
+                "  强   ",
+                "  齿   ",
+                "  共   ",
+            ],
+            12, //attack
+            14, //defense
+            12, //processors
+            8, //antivirus
+            500, //battery
+            500, //maxbattery
+            1000, //exp
+            new Items.Battery(), //drop
+
+            new capacity.Capacity(
+                "Charge", // name
+                "Fonce sur son adversaire", // description
+                1, // number of targets
+                true, // random ennemy
+                "physical", // type
+                0, // RAM
+                [new capacity.CapacityEffect("battery", -25)], // statistics
+            ),
+
+            new capacity.Capacity(
+                "USB key", // name
+                "Utilise une clé usb au contenu inconnu, peut infliger de gros dégâts voir aucun", // description
+                null, // number of targets
+                true, // random ennemy
+                "physical, random" , // type
+                0, // RAM
+                [new capacity.CapacityEffect("battery", -50), new capacity.CapacityEffect("battery", 0)], // statistics
+            ),
+        )
+    }
+}
+
 export class Titi extends Boss {
     constructor() {
         super(
@@ -77,47 +159,6 @@ export class Titi extends Boss {
     }
 }
 
-export class Laurent extends Boss {
-    constructor() {
-        super(
-            "Laurent", //classname
-            [
-                "  强   ",
-                "  秃   ",
-                "  大   ",
-            ],
-            5, //attack
-            10, //defense
-            7, //processors
-            4, //antivirus
-            320, //battery
-            320, //maxbattery
-            2000, //exp
-            new Items.ShinyLaurentSkull(), //drop
-
-            new capacity.Capacity(
-                "Charge", // name
-                "Fonce sur son adversaire", // description
-                1, // number of targets
-                true, // random ennemy
-                "physical", // type
-                0, // RAM
-                [new capacity.CapacityEffect("battery", -25)], // statistics
-            ),
-
-            new capacity.Capacity(
-                "Reflection", // name
-                "Renvoie la prochaine attaque physique du tour", // description
-                0, // number of targets
-                true, // random ennemy
-                "mirror", // type
-                0, // RAM
-                [new capacity.CapacityEffect("defense", 999), new capacity.CapacityEffect("battery", -1)], // statistics
-            ),
-        )
-    }
-}
-
 export class Pascalou extends Boss {
     constructor() {
         super(
@@ -133,7 +174,7 @@ export class Pascalou extends Boss {
             11, //antivirus
             250, //battery
             250, //maxbattery
-            3500, //exp
+            2000, //exp
             new Items.RAMCleaner(), //drop
 
             new capacity.Capacity(
@@ -159,42 +200,42 @@ export class Pascalou extends Boss {
     }
 }
 
-export class Bidoof extends Boss {
+export class Juju extends Boss {
     constructor() {
         super(
-            "Bidoof", //classname
+            "Juju", //classname
             [
                 "  强   ",
-                "  齿   ",
-                "  共   ",
+                "  知   ",
+                "  识   ",
             ],
-            10, //attack
+            12, //attack
             10, //defense
-            10, //processors
-            4, //antivirus
+            13, //processors
+            16, //antivirus
             500, //battery
             500, //maxbattery
-            5000, //exp
-            new Items.Battery(), //drop
+            1500, //expreward
+            new Items.Tiesselune(), //drop
 
             new capacity.Capacity(
-                "Charge", // name
-                "Fonce sur son adversaire", // description
+                "Focus", // name
+                "Se consentre pour lancer une attaque puissante sur un adversaire", // description
                 1, // number of targets
-                true, // random ennemy
+                false, // random ennemy
                 "physical", // type
                 0, // RAM
-                [new capacity.CapacityEffect("battery", -25)], // statistics
+                [new capacity.CapacityEffect("battery", -30)], // statistics
             ),
 
             new capacity.Capacity(
-                "USB key", // name
-                "Utilise une clé usb au contenu inconnu, peut infliger de gros dégâts voir aucun", // description
-                null, // number of targets
-                true, // random ennemy
-                "physical, random" , // type
+                "\"I know the code\"", // name
+                "Augmente sa défense", // description
+                3, // number of targets
+                false, // random ennemy
+                "buff", // type
                 0, // RAM
-                [new capacity.CapacityEffect("battery", -50), new capacity.CapacityEffect("battery", 0)], // statistics
+                [new capacity.CapacityEffect("defense", 1.5)], // statistics
             ),
         )
     }
@@ -209,13 +250,13 @@ export class Romeo extends Boss {
                 "  络   ",
                 "  情   ",
             ],
-            11, //attack
+            18, //attack
             20, //defense
-            11, //processors
+            18, //processors
             20, //antivirus
             1000, //battery
             1000, //maxbattery
-            4000, //exp
+            2000, //exp
             null, //drop
 
             new capacity.Capacity(
@@ -250,13 +291,13 @@ export class Juliette extends Boss {
                 "  心   ",
                 "  情   ",
             ],
-            10, //attack
+            6, //attack
             6, //defense
-            6, //processors
+            15, //processors
             7, //antivirus
-            250, //battery
-            250, //maxbattery
-            2500, //exp
+            300, //battery
+            300, //maxbattery
+            1000, //exp
             null, //drop
 
             new capacity.Capacity(
@@ -274,9 +315,9 @@ export class Juliette extends Boss {
                 "Baisse la défense de tous ses adversaires", // description
                 3, // number of targets
                 true, // random ennemy
-                "code", // type
+                "debuff", // type
                 0, // RAM
-                [new capacity.CapacityEffect("defense", -0.6)], // statistics
+                [new capacity.CapacityEffect("defense", 0.6)], // statistics
             ),
         )
     }
@@ -285,47 +326,6 @@ export class Juliette extends Boss {
 export class RomeoJuliette {
     public romeo = new Romeo()
     public juliette = new Juliette()
-}
-
-export class Juju extends Boss {
-    constructor() {
-        super(
-            "Juju", //classname
-            [
-                "  强   ",
-                "  知   ",
-                "  识   ",
-            ],
-            12, //attack
-            10, //defense
-            13, //processors
-            16, //antivirus
-            500, //battery
-            500, //maxbattery
-            10000, //expreward
-            new Items.Tiesselune(), //drop
-
-            new capacity.Capacity(
-                "Focus", // name
-                "Attaque son plus faible ennemi", // description
-                1, // number of targets
-                false, // random ennemy
-                "physical", // type
-                0, // RAM
-                [new capacity.CapacityEffect("battery", -20)], // statistics
-            ),
-
-            new capacity.Capacity(
-                "\"I know the code\"", // name
-                "Renvoie la prochaine attaque avec des dégâts augmentés", // description
-                1, // number of targets
-                false, // random ennemy
-                "mirror", // type
-                0, // RAM
-                [new capacity.CapacityEffect("defense", 999), new capacity.CapacityEffect("battery", -2)], // statistics
-            ),
-        )
-    }
 }
 
 export class AnilMagellanDende extends Boss {
@@ -338,11 +338,11 @@ export class AnilMagellanDende extends Boss {
                 "  领导者",
                 "  秃  秃",
             ],
-            16, //attack
-            18, //defense
+            20, //attack
+            20, //defense
             13, //processors
-            15, //antivirus
-            550, //battery
+            20, //antivirus
+            600, //battery
             1000, //maxbattery
             10000, //exp
             new Items.ExitKeys(), //drop
@@ -354,7 +354,7 @@ export class AnilMagellanDende extends Boss {
                 true, // random ennemy
                 "physical", // type
                 0, // RAM
-                [new capacity.CapacityEffect("battery", -10)], // statistics
+                [new capacity.CapacityEffect("battery", -15)], // statistics
             ),
 
             new capacity.Capacity(

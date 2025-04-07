@@ -67,6 +67,12 @@ export class Team {
         }
     }
 
+    AddXp(nb: number) {
+        this.character1?.AddXp(nb);
+        this.character2?.AddXp(nb);
+        this.character2?.AddXp(nb);
+    }
+
     GetTeam(): Array<character> {
         return this.characterslist;
     }

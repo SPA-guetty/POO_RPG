@@ -14,7 +14,7 @@ export class Nainformaticien {
     antivirus = 10;
     battery = 70;
     maxbattery = 70;
-    ram = 16;
+    ram = 0;
 
     capacity1 = new capacity.Capacity(
         "Battery sharing", // name

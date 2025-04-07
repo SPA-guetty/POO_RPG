@@ -250,6 +250,14 @@ export class BossFight {
 
         for (let i = 0; i < 3; i++) {
             if (this.ennemies[i] !== null) {
+                if (this.ennemies[i]!.battery < 0) {
+                    this.ennemies[i]!.battery = 0;
+                    if (this.ennemies[i]!.classname === "Romeo") {
+                        this.ennemies[2]!.battery = 0;
+                    } else if (this.ennemies[i]!.classname === "Juliette") {
+                        this.ennemies[0]!.battery = 0;
+                    }
+                }
                 console.log(`C'est au tour de ${this.ennemies[i]?.classname}`);
                 await Wait.Time(2000);
                 this.EnnemyTurn(i)

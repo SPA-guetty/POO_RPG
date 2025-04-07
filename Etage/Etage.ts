@@ -10,7 +10,7 @@ import { BossFight } from "../Main/Battles/BossFight.ts"
 
 export class Etage {
 
-    private nb = 0
+    public nb = 0
     private ennemi1: Ennemy | null = null;
     private ennemi2: Ennemy | null = null;
     private ennemi3: Ennemy | null = null;
@@ -90,6 +90,14 @@ export class Etage {
             }
         }
 
+    }
+
+    GetEnnemyList(): Array<Ennemy | Bosses.Boss | null> {
+        if (this.nb < 0) {
+            return [this.boss1, this.boss2, this.boss3];
+        } else {
+            return [this.ennemi1, this.ennemi2, this.ennemi3];
+        }
     }
 
     async Start(allies: Array<character>) {

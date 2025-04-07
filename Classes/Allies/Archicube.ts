@@ -13,7 +13,7 @@ export class Archicube {
     antivirus = 10;
     battery = 80;
     maxbattery = 80;
-    ram = 32;
+    ram = 0;
 
     capacity1 = new capacity.Capacity(
         "Hidden-socket", // name

@@ -35,7 +35,7 @@ export class Remy extends Ennemy {
                 true, // random ennemy
                 "physical, dangerous", // type
                 0, // RAM
-                [new capacity.CapacityEffect("battery", -20)], // statistics
+                [new capacity.CapacityEffect("battery", -15)], // statistics
             ),
         )
     }

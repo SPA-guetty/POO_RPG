@@ -9,12 +9,12 @@ export class Animatueur {
     ];
 
     attack = 10;
-    defense = 5;
+    defense = 8;
     processors = 0;
-    antivirus = 3;
+    antivirus = 6;
     battery = 50;
     maxbattery = 50;
-    ram = 32;
+    ram = 0;
 
     capacity1 = new capacity.Capacity(
         "Manipulation visuelle", // name

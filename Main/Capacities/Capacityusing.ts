@@ -17,7 +17,6 @@ import { Boss } from "../../Classes/Bosses.ts";
 
 export class UseCapacity {
     static Use(allies: Array<character | Ennemy | Boss | null>, ennemies: Array<character | Ennemy | Boss | null>, attacker: number, target: number, capacity: Capacity) {
-        console.log("Capacity is used: " + capacity.name)
         if (capacity.type.includes("code") || capacity.type.includes("physical") || capacity.type.includes("heal")) {
             for (let i = 0; i < capacity.effect.length; i++) {
                 if (capacity.effect[i].effect === "battery") {
@@ -96,7 +95,7 @@ export class UseCapacity {
     static Steal(allies: Array<character | Ennemy | Boss | null>, ennemies: Array<character | Ennemy | Boss | null>, attacker: character | Ennemy | null) {
         let pv = 0;
         for (let ennemy = 0; ennemy < 3; ennemy ++) {
-            if (ennemy !== null) {
+            if (ennemies[ennemy] !== null) {
                 const max = 16 + attacker!.antivirus + attacker!.processors;
                 const stealing = Randomnumber.Random(0, max);
                 if (ennemies[ennemy]!.battery >= stealing) {
@@ -128,6 +127,18 @@ export class UseCapacity {
                     targets[target]!.processors = targets[target]!.processors * effect.intensity;
                 } else if (effect.effect === "antivirus") {
                     targets[target]!.antivirus = targets[target]!.antivirus * effect.intensity;
+                }
+            }
+        }
+    }
+
+    static Check(targets: Array<character | Ennemy | Boss | null>) {
+        for (let target = 0; target < 3; target++) {
+            if (targets[target] !== null) {
+                if (targets[target]!.battery <= 0) {
+                    targets[target]!.battery = 0
+                } else if (targets[target]!.battery <= targets[target]!.maxbattery) {
+                    targets[target]!.battery = targets[target]!.maxbattery
                 }
             }
         }

@@ -37,6 +37,8 @@ export class character {
     maxbattery: number;
     ram: number;
 
+    level: number = 0;
+
     capacity1: capacity.Capacity;
     capacity2: capacity.Capacity;
 
@@ -55,5 +57,24 @@ export class character {
         this.capacity1 = selectedcharacter.capacity1;
         this.capacity2 = selectedcharacter.capacity2;
         this.passive = selectedcharacter.passive;
+    }
+
+    LevelUp(): void {
+        this.attack += 1; 
+        this.defense += 1;
+        this.processors += 1;
+        this.antivirus += 1;
+        this.battery += 5;
+        this.maxbattery += 5;
+
+        this.level += 1;
+    }
+
+    AddXp(nb: number): void {
+        this.ram += nb;
+        while (this.ram >= 500) {
+            this.ram -= 500;
+            this.LevelUp();
+        }
     }
 }
