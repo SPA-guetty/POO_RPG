@@ -6,7 +6,6 @@ import { Lostmenu } from "../Menus/Lostmenu.ts"
 export class Game {
     private ympeldown: Ympeldown;
     private allies: Team;
-    private allylevel: number = 0;
 
     private lost = false;
     

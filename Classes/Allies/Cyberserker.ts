@@ -32,7 +32,7 @@ export class Cyberserker {
         true, // random ennemy
         "physical, dangerous", // type
         8, // RAM
-        [new capacity.CapacityEffect("battery", -60)], // statistics
+        [new capacity.CapacityEffect("battery", -30)], // statistics
     );
     passive = new capacity.Passive(
         "Cyber-eye", // name: string;

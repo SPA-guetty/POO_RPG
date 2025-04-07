@@ -250,10 +250,10 @@ export class Romeo extends Boss {
                 "  络   ",
                 "  情   ",
             ],
-            18, //attack
-            20, //defense
-            18, //processors
-            20, //antivirus
+            80, //attack
+            30, //defense
+            80, //processors
+            30, //antivirus
             3000, //battery
             3000, //maxbattery
             2000, //exp
@@ -276,7 +276,7 @@ export class Romeo extends Boss {
                 true, // random ennemy
                 "code", // type
                 0, // RAM
-                [new capacity.CapacityEffect("battery", -999), new capacity.CapacityEffect("battery", 20)], // statistics
+                [new capacity.CapacityEffect("battery", -20), new capacity.CapacityEffect("battery", 20)], // statistics
             ),
         )
     }
@@ -291,10 +291,10 @@ export class Juliette extends Boss {
                 "  心   ",
                 "  情   ",
             ],
-            6, //attack
-            6, //defense
-            15, //processors
-            7, //antivirus
+            60, //attack
+            35, //defense
+            60, //processors
+            35, //antivirus
             3000, //battery
             3000, //maxbattery
             1000, //exp
@@ -338,11 +338,11 @@ export class AnilMagellanDende extends Boss {
                 "  领导者",
                 "  秃  秃",
             ],
-            20, //attack
+            100, //attack
             30, //defense
-            13, //processors
+            100, //processors
             30, //antivirus
-            600, //battery
+            5000, //battery
             5000, //maxbattery
             10000, //exp
             new Items.ExitKeys(), //drop
