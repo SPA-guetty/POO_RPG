@@ -150,101 +150,124 @@ export class BossFight {
         this.turn++;
 
         for (let i = 0; i < this.allies.length; i++) {
-            console.warn("Je suis passé par ici", i)
-            let validation = false;
-            while (!validation) {
-                this.PrintAllies(false);
-                this.PrintEnnemies(false);
-                let choice = prompt(`Que voulez-vous faire avec ${this.allies[i].classname}? \n 1: Utiliser une compétence \n 2: Se reposer \n 3: Utiliser un objet \nVotre choix:`);
+            if (this.allies[i].battery > 0) {
+                let validation = false;
+                while (!validation) {
+                    this.PrintAllies(false);
+                    this.PrintEnnemies(false);
+                    let choice = prompt(`Que voulez-vous faire avec ${this.allies[i].classname}? \n 1: Utiliser une compétence \n 2: Se reposer \n 3: Utiliser un objet \nVotre choix:`);
 
-                while (!(new PromptChecking().Check(choice) && 0 < parseInt(choice!) && parseInt(choice!) < 4)) {
-                    console.log("Veuillez rentrer une valeur proposée");
-                    choice = prompt(`Que voulez-vous faire avec ${this.allies[i].classname}? \n 1: Utiliser une compétence \n 2: Se reposer \n 3: Utiliser un objet \nVotre choix:`);;
-                }
-                
-                if (choice === "1") {
-                    validation = true;
-                    this.PrintCapacities(this.allies[i]);
-                    let choice2 = prompt("Quelle capacité voulez-vous utiliser?");
-
-                    while (!(new PromptChecking().Check(choice2))) {
-                        this.PrintCapacities(this.allies[i]);
-                        console.log("Veuillez rentrer un nombre");
-                        choice2 = prompt("Quelle capacité voulez-vous utiliser?");
+                    while (!(new PromptChecking().Check(choice) && 0 < parseInt(choice!) && parseInt(choice!) < 4)) {
+                        console.log("Veuillez rentrer une valeur proposée");
+                        choice = prompt(`Que voulez-vous faire avec ${this.allies[i].classname}? \n 1: Utiliser une compétence \n 2: Se reposer \n 3: Utiliser un objet \nVotre choix:`);;
                     }
+                    
+                    if (choice === "1") {
+                        validation = true;
+                        this.PrintCapacities(this.allies[i]);
+                        let choice2 = prompt("Quelle capacité voulez-vous utiliser?");
 
-                    if (choice2 === "1" || choice2 === "2") {
-                        let cap: Capacity;
-                        if (choice2 === "1") {
-                            cap = this.allies[i].capacity1;
-                        } else {
-                            cap = this.allies[i].capacity2;
+                        while (!(new PromptChecking().Check(choice2))) {
+                            this.PrintCapacities(this.allies[i]);
+                            console.log("Veuillez rentrer un nombre");
+                            choice2 = prompt("Quelle capacité voulez-vous utiliser?");
                         }
 
-                        let choice3: string;
+                        if (choice2 === "1" || choice2 === "2") {
+                            let cap: Capacity;
+                            if (choice2 === "1") {
+                                cap = this.allies[i].capacity1;
+                            } else {
+                                cap = this.allies[i].capacity2;
+                            }
 
-                        if (cap.type === "buff" || cap.type.includes("heal")) {
-                            if (cap.numberoftargets === 1) {
-                                this.PrintAllies();
-                                let entry = prompt("Sur quel allié voulez-vous l'utiliser?");
-                                while (!(new PromptChecking().Check(entry))) {
+                            let choice3: string;
+
+                            if (cap.type === "buff" || cap.type.includes("heal")) {
+                                if (cap.numberoftargets === 1) {
                                     this.PrintAllies();
-                                    console.log("Veuillez rentrer un nombre");
-                                    entry = prompt("Sur quel allié voulez-vous l'utiliser?");
+                                    let entry = prompt("Sur quel allié voulez-vous l'utiliser?");
+                                    while (!(new PromptChecking().Check(entry))) {
+                                        this.PrintAllies();
+                                        console.log("Veuillez rentrer un nombre");
+                                        entry = prompt("Sur quel allié voulez-vous l'utiliser?");
+                                    }
+                                    choice3 = entry!;
+                                } else {
+                                    choice3 = "-1"
                                 }
-                                choice3 = entry!;
                             } else {
-                                choice3 = "-1"
-                            }
-                        } else {
-                            if (cap.numberoftargets === 1) {
-                                this.PrintEnnemies();
-                                let entry = prompt("Sur quel ennemi voulez-vous l'utiliser?");
-                                while (!(new PromptChecking().Check(entry))) {
+                                if (cap.numberoftargets === 1) {
+                                    const onally = cap.type === "buff" || cap.type.includes("heal");
+                                    let targetdead = false;
                                     this.PrintEnnemies();
-                                    console.log("Veuillez rentrer une valeur valide");
-                                    entry = prompt("Sur quel ennemi voulez-vous l'utiliser?");
-                                }
-                                choice3 = entry!;
-                            } else {
-                                choice3 = "-1"
-                            }
-                        }
+                                    let entry = prompt("Sur quel ennemi voulez-vous l'utiliser?");
+                                    while (!(new PromptChecking().Check(entry)) || targetdead) {
+                                        this.PrintEnnemies();
+                                        console.log("Veuillez rentrer une valeur valide");
+                                        entry = prompt("Sur quel ennemi voulez-vous l'utiliser?");
+                                        if (new PromptChecking().Check(entry)) {
+                                            if (onally) {
+                                                targetdead = this.allies[parseInt(entry!)].battery <= 0;
+                                            } else {
+                                                if (onally) {
+                                                    let target: number = 0;
+                                                    let count: number = 0;
 
-                        if (cap.type === "buff" || cap.type.includes("heal") && (-1 > parseInt(choice3!) || parseInt(choice3!) > this.CountAllies())) {
-                            validation = false;
-                        } else if (cap.type !== "buff" && !(cap.type.includes("heal")) && (-1 > parseInt(choice3!) || parseInt(choice3!) > this.CountEnnemies())) {
-                            validation = false;
-                        } else {
-                            if (cap.numberoftargets !== 1 || cap.type === "buff" || cap.type.includes("heal")) {
-                                UseCapacity.Use(this.allies, this.ennemies, i, parseInt(choice3)!, cap);
-                            } else {
-                                let target: number = 0;
-                                let count: number = 0;
-
-                                for (let j = 0; j < this.ennemies.length; j++) {
-                                    if (this.ennemies[j] !== null) {
-                                        count++;
-                                        if (count === parseInt(choice3!)) {
-                                            target = j;
+                                                    for (let j = 0; j < this.ennemies.length; j++) {
+                                                        if (this.ennemies[j] !== null) {
+                                                            count++;
+                                                            if (count === parseInt(choice3!)) {
+                                                                target = parseInt(entry!);
+                                                            }
+                                                        }
+                                                    }
+                                                    targetdead = this.ennemies[target]!.battery <= 0;
+                                                }
+                                            }
                                         }
                                     }
+                                    choice3 = entry!;
+                                } else {
+                                    choice3 = "-1"
                                 }
-                                UseCapacity.Use(this.allies, this.ennemies, i, target, cap);
                             }
+
+                            if (cap.type === "buff" || cap.type.includes("heal") && (-1 > parseInt(choice3!) || parseInt(choice3!) >= this.CountAllies())) {
+                                validation = false;
+                            } else if (cap.type !== "buff" && !(cap.type.includes("heal")) && (-1 > parseInt(choice3!) || parseInt(choice3!) > this.CountEnnemies())) {
+                                validation = false;
+                            } else {
+                                if (cap.numberoftargets !== 1 || cap.type === "buff" || cap.type.includes("heal")) {
+                                    UseCapacity.Use(this.allies, this.ennemies, i, parseInt(choice3)!, cap);
+                                } else {
+                                    let target: number = 0;
+                                    let count: number = 0;
+
+                                    for (let j = 0; j < this.ennemies.length; j++) {
+                                        if (this.ennemies[j] !== null) {
+                                            count++;
+                                            if (count === parseInt(choice3!)) {
+                                                target = j;
+                                            }
+                                        }
+                                    }
+                                    UseCapacity.Use(this.allies, this.ennemies, i, target, cap);
+                                }
+                            }
+                            
+                        } else {
+                            validation = false;
                         }
-                        
+                    } else if (choice === "2") {
+                        validation = true;
+                        this.allies[i].battery+=10;
+                        if (this.allies[i].battery > this.allies[i].maxbattery) {
+                            this.allies[i].battery = this.allies[i].maxbattery
+                        }
                     } else {
-                        validation = false;
+                        console.log("Vous n'avez pas d'objets");
                     }
-                } else if (choice === "2") {
-                    validation = true;
-                    this.allies[i].battery+=10;
-                    if (this.allies[i].battery > this.allies[i].maxbattery) {
-                        this.allies[i].battery = this.allies[i].maxbattery
-                    }
-                } else {
-                    console.log("Vous n'avez pas d'objets");
                 }
             }
         }
@@ -260,8 +283,8 @@ export class BossFight {
                     }
                 }
                 console.log(`C'est au tour de ${this.ennemies[i]?.classname}`);
+                this.EnnemyTurn(i);
                 await Wait.Time(2000);
-                this.EnnemyTurn(i)
             }
         }
 

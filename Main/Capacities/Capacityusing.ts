@@ -57,6 +57,8 @@ export class UseCapacity {
                 }
             }
         }
+        this.Check(allies);
+        this.Check(ennemies);
     }
 
     static CountTeam(team: Array<character | Ennemy | Boss | null>): number {
@@ -135,10 +137,11 @@ export class UseCapacity {
     static Check(targets: Array<character | Ennemy | Boss | null>) {
         for (let target = 0; target < 3; target++) {
             if (targets[target] !== null) {
+                targets[target]!.battery = Math.round(targets[target]!.battery);
                 if (targets[target]!.battery <= 0) {
-                    targets[target]!.battery = 0
-                } else if (targets[target]!.battery <= targets[target]!.maxbattery) {
-                    targets[target]!.battery = targets[target]!.maxbattery
+                    targets[target]!.battery = 0;
+                } else if (targets[target]!.battery > targets[target]!.maxbattery) {
+                    targets[target]!.battery = targets[target]!.maxbattery;
                 }
             }
         }
